@@ -86,7 +86,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/04/27/Android/study/android-optimization/index.html">
 <meta property="og:site_name" content="Ronrwin">
 <meta property="og:description" content="涉及到的点比较细，都是在工作学习中记录下来的，养成良好习惯。">
-<meta property="og:updated_time" content="2016-04-27T10:38:36.643Z">
+<meta property="og:updated_time" content="2016-04-28T15:28:23.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android性能优化">
 <meta name="twitter:description" content="涉及到的点比较细，都是在工作学习中记录下来的，养成良好习惯。">
@@ -348,7 +348,7 @@
 <li>没有透明度要求的图片，应使用<strong>jpg</strong>，加快decode/compress速度。</li>
 <li>不要通过静态变量缓存Drawable对象。</li>
 <li>不要将同一个Drawable对象设置给多个控件。</li>
-<li>对于复杂的窗口，不要在顶层使用RelativeLayout、LinearLayout等multi-pass layout。</li>
+<li>对于复杂的窗口，不要在顶层使用RelativeLayout、LinearLayout等<a href="/2016/04/27/study/multi-pass-viewgroup">multi-pass layout</a>。</li>
 <li>谨慎使用<code>requestLayout()</code>，会执行measure, layout, draw等操作。</li>
 <li>文字颜色尽量不设置透明度。</li>
 <li>自绘的View，<code>invalidate</code>应当计算最小的重绘区域，避免重绘整个View。</li>
@@ -431,15 +431,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/26/Android/translate/declare-permission/" rel="next" title="权限篇（2）----声明权限">
-                <i class="fa fa-chevron-left"></i> 权限篇（2）----声明权限
+              <a href="/2016/04/27/study/multi-pass-viewgroup/" rel="next" title="Multi-pass Viewgroup性能表现">
+                <i class="fa fa-chevron-left"></i> Multi-pass Viewgroup性能表现
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/27/sdudy/study-blogs/" rel="prev" title="学习资料获取来源">
+              <a href="/2016/04/27/study/study-blogs/" rel="prev" title="学习资料获取来源">
                 学习资料获取来源 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -516,7 +516,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
