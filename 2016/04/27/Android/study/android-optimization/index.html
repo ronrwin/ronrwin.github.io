@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="权限," />
+  <meta name="keywords" content="性能," />
 
 
 
@@ -80,16 +80,16 @@
 
 
 
-<meta name="description" content="权限学习主文第一篇，讲述权限的声明方式。">
+<meta name="description" content="涉及到的点比较细，都是在工作学习中记录下来的，养成良好习惯。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="权限篇（2）----声明权限">
-<meta property="og:url" content="http://yoursite.com/2016/04/26/Android/translate/declare-permission/index.html">
+<meta property="og:title" content="Android性能优化">
+<meta property="og:url" content="http://yoursite.com/2016/04/27/Android/study/android-optimization/index.html">
 <meta property="og:site_name" content="Ronrwin">
-<meta property="og:description" content="权限学习主文第一篇，讲述权限的声明方式。">
-<meta property="og:updated_time" content="2016-04-27T11:14:31.450Z">
+<meta property="og:description" content="涉及到的点比较细，都是在工作学习中记录下来的，养成良好习惯。">
+<meta property="og:updated_time" content="2016-04-27T10:38:36.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="权限篇（2）----声明权限">
-<meta name="twitter:description" content="权限学习主文第一篇，讲述权限的声明方式。">
+<meta name="twitter:title" content="Android性能优化">
+<meta name="twitter:description" content="涉及到的点比较细，都是在工作学习中记录下来的，养成良好习惯。">
 
 
 
@@ -107,7 +107,7 @@
   };
 </script>
 
-  <title> 权限篇（2）----声明权限 | Ronrwin </title>
+  <title> Android性能优化 | Ronrwin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -247,7 +247,7 @@
             
             
               
-                权限篇（2）----声明权限
+                Android性能优化
               
             
           </h1>
@@ -259,8 +259,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-26T21:16:23+08:00" content="2016-04-26">
-              2016-04-26
+            <time itemprop="dateCreated" datetime="2016-04-27T11:14:48+08:00" content="2016-04-27">
+              2016-04-27
             </time>
           </span>
 
@@ -273,8 +273,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android翻译/" itemprop="url" rel="index">
-                    <span itemprop="name">Android翻译</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -289,8 +289,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/26/Android/translate/declare-permission/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/26/Android/translate/declare-permission/" itemprop="commentsCount"></span>
+                <a href="/2016/04/27/Android/study/android-optimization/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/27/Android/study/android-optimization/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -300,7 +300,7 @@
 
           
           
-             <span id="/2016/04/26/Android/translate/declare-permission/" class="leancloud_visitors" data-flag-title="权限篇（2）----声明权限">
+             <span id="/2016/04/27/Android/study/android-optimization/" class="leancloud_visitors" data-flag-title="Android性能优化">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -322,14 +322,86 @@
       
 
       
-        <p>原文链接：<a href="http://developer.android.com/intl/zh-cn/training/permissions/declaring.html#perm-add" target="_blank" rel="external">http://developer.android.com/intl/zh-cn/training/permissions/declaring.html#perm-add</a></p>
-<h2 id="这篇课程会教你"><a href="#这篇课程会教你" class="headerlink" title="这篇课程会教你"></a>这篇课程会教你</h2><p><a href="#明确你的App需要什么权限">明确你的App需要什么权限</a><br><a href="#添加权限到Menifest">添加权限到Menifest</a></p>
-<h2 id="声明权限"><a href="#声明权限" class="headerlink" title="声明权限"></a>声明权限</h2><p>Android每一个app运行在一个有限访问权限的沙箱。如果一个app想使用沙箱之外的资源和数据，需要向系统请求适当的权限。声明权限需要通过在<a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html" target="_blank" rel="external">App Manifest</a>列出需要的权限。</p>
-<p>根据权限的敏感程度，系统会自动授予所声明的权限，或者需要使用者授权。例如，你的应用请求打开手电筒的权限，系统会自动授予该权限。但是如果你的应用需要读取用户的通讯录，系统将询问用户是否允许授予该权限。在不同的版本下，用户可能在安装应用时授予权限（Android 5.1 或更低版本），或者在运行时授予（Android 6.0以上）。</p>
-<h2 id="明确你的App需要什么权限"><a href="#明确你的App需要什么权限" class="headerlink" title="明确你的App需要什么权限"></a>明确你的App需要什么权限</h2><p>当你开发时，应该注意需要权限的功能。通常，当应用使用不属于自己的资源或对设备以及其他应用造成影响时，会需要权限。例如，如果应用需要联网、使用相机或者开关wifi，应用需要适当的权限。请参照<a href="http://developer.android.com/intl/zh-cn/guide/topics/security/permissions.html#normal-dangerous" target="_blank" rel="external">权限列表</a>。</p>
-<p>你的应用只需要直接相关的权限。如果应用使用其他应用提供的资源时，是不需要申请权限的。例如你的应用需要读取用户的联系人信息，它需要<a href="http://developer.android.com/intl/zh-cn/reference/android/Manifest.permission.html#READ_CONTACTS" target="_blank" rel="external">READ_CONTACTS</a>权限。但是如果你使用<code>intent</code>从另外的联系人管理app获取资料，你不需要申请权限，而被请求的联系人管理app需要申请该权限。更多资料，参考<a href="http://developer.android.com/intl/zh-cn/training/permissions/best-practices.html#perms-vs-intents" target="_blank" rel="external">使用意图</a>。</p>
-<h2 id="添加权限到Menifest"><a href="#添加权限到Menifest" class="headerlink" title="添加权限到Menifest"></a>添加权限到Menifest</h2><p>要声明权限，需要添加&lt;uses-permission&gt;到&lt;manifest&gt;中，作为&lt;manifest&gt;标签的子元素。例如应用需要发短信，manifest像这样：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">        <span class="attr">package</span>=<span class="string">"com.example.snazzyapp"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.SEND_SMS"</span>/&gt;</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">application</span> <span class="attr">...</span>&gt;</span></span><br><span class="line">        ...</span><br><span class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>系统会对所申请权限的敏感度作判断。如果权限不涉及用户隐私，系统自动授予权限。如果权限涉及到用户敏感信息，系统会弹框请求用户的允许。更多资料，请参照<a href="http://developer.android.com/intl/zh-cn/guide/topics/security/permissions.html#normal-dangerous" target="_blank" rel="external">不同的权限</a>。</p>
+        <p>关于Android性能优化的文章，网上有很多，涉及的点也很多，包括内存方面，界面方面，布局方面，代码编写方面。<br>基本遵循的规则有两个：</p>
+<ol>
+<li><strong>不做多余的工作</strong></li>
+<li><strong>尽量少分配内存</strong></li>
+</ol>
+<p>除去编写代码时需注意的规范之外，在应用运行中也会有很多需要优化的地方，这部分的性能优化需要结合性能分析，有很多种性能分析的工具，对性能作系统的观测与研究。</p>
+<p>性能分析方面会另外开辟，这里只是记录在优化上面的方式，还需花时间慢慢做到细化。不能说大而全，但也算是切中要点，以养成良好的习惯，在平时码代码的时候能够尽量避开，仅供所有人参考。</p>
+<h3 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h3><ul>
+<li>应保守使用<code>Log</code>。</li>
+<li>正确使用<code>Log</code>级别。<ul>
+<li><code>ERROR</code>：用于严重错误场景。</li>
+<li><code>WARNNING</code>：用于记录非预期场景发生时的信息，例如处理非法消息类型时使用。</li>
+<li><code>INFO</code>：用于记录关键路径的关键信息。</li>
+<li><code>DEBUG</code>：用于调试程序。DEBUG级别的日志最好不要出现在release版本当中，使用if(DEBUG)开关控制。</li>
+<li><code>VERBOSE</code>：用于临时调试。</li>
+</ul>
+</li>
+</ul>
+<h3 id="UI相关"><a href="#UI相关" class="headerlink" title="UI相关"></a>UI相关</h3><ul>
+<li>采用硬件加速，在<code>androidmanifest.xml</code>中application添加<code>android:hardwareAccelerated=&quot;true&quot;</code>。不过这个需要在android 3.0才可以使用。android4.0这个选项是默认开启的。</li>
+<li>使用<code>merge</code>优化布局层数，采用<code>include</code>共享布局。</li>
+<li>View中设置缓存属性<code>.setDrawingCache</code>为true。</li>
+<li>png图片采用压缩工具压缩。</li>
+<li>没有透明度要求的图片，应使用<strong>jpg</strong>，加快decode/compress速度。</li>
+<li>不要通过静态变量缓存Drawable对象。</li>
+<li>不要将同一个Drawable对象设置给多个控件。</li>
+<li>对于复杂的窗口，不要在顶层使用RelativeLayout、LinearLayout等multi-pass layout。</li>
+<li>谨慎使用<code>requestLayout()</code>，会执行measure, layout, draw等操作。</li>
+<li>文字颜色尽量不设置透明度。</li>
+<li>自绘的View，<code>invalidate</code>应当计算最小的重绘区域，避免重绘整个View。</li>
+<li>使用<strong>EditText</strong>时，最好指定<strong>inputType</strong>，追求更高体验。</li>
+<li>不要在<strong>onAnimationEnd()</strong>中把自己从view tree中移除，AC下这个View还会继续绘制最后一帧，移除会导致parent的dispatchDraw出现崩溃。</li>
+<li>View的框架事件中不能修改布局，否则会导致显示/响应错乱甚至崩溃，如：onMessure、onLayout、onDraw、onTouchEvent、dispatchKeyEvent、onInterupteXxx等。</li>
+<li>View的框架事件中不宜创建对象，因其触发频度高，可能引起频繁GC进而影响性能。</li>
+<li>按钮尽量都设为<code>singleLine(true)</code>，以防止按钮文本过长时出现折行。</li>
+<li>对于字体使用sp还是dp，看实际需要。Android官方推荐使用sp，设置为sp的文字会随系统文字大小变化而变化，dp则不会。</li>
+<li>ListView中使用convertView复用控件；背景色与cacheColorHint设置相同颜色，提高滑动时渲染性能；item尽可能减少布局。</li>
+</ul>
+<h3 id="数据-内存相关"><a href="#数据-内存相关" class="headerlink" title="数据/内存相关"></a>数据/内存相关</h3><ul>
+<li>避免在UI线程执行耗时操作</li>
+<li>尽量不在主线程做I/O、联网操作。</li>
+<li>Service.onCreate()/onStart()，BroadcastReceiver.onReceive()都是在UI线程执行，因此不要在这些方法里面执行耗时操作。</li>
+<li>优先使用线程池管理线程。</li>
+<li>注意Cursor，文件I/O的关闭。</li>
+<li>Message必须采用<code>Message.Obtain()</code>获取，Android2.x存在bug，使用new Message()获取的Message对象将会泄漏。</li>
+<li>Activity的Context在Activity范围内使用，即UI相关的操作，其他情况使用Application Context。</li>
+<li>使用<code>View.post()</code>接口时，应确保当前对象处于View Tree上。</li>
+<li>有些能用文件操作的，尽量采用文件操作，文件操作的速度比数据库的操作要快10倍左右。</li>
+</ul>
+<h3 id="编码相关"><a href="#编码相关" class="headerlink" title="编码相关"></a>编码相关</h3><ul>
+<li>用<code>static final</code>声明常量。</li>
+<li>用<code>移位</code>代替乘除运算。</li>
+<li>使用<code>StringBuffer</code>或<code>StringBuilder</code>替代String的构造操作。</li>
+<li><p>StringBuilder没有同步保护，因此比StringBuffer要快；如果构建的字符串是局部变量，则没有线程安全问题，用StringBuilder效率高。</p>
+</li>
+<li><p>字符串比较使用<code>&quot;html&quot;.equals(targetString)</code>这种方法，避免空指针异常；</p>
+</li>
+<li>谨慎使用<code>synchronized</code>；调用一个synchronized方法比没有synchronized的方法要慢。</li>
+<li><strong>慎用反射</strong>。通过反射调用方法，访问成员变量要慢很多。</li>
+<li>尽量避免创建对象，使用引用。</li>
+<li>使用<code>clone()</code>方法避免构造一个新的对象。例如数组也是一个对象，可以用clone()方法拷贝数组。</li>
+<li>变量引用新对象之前先把变量置<code>null</code>；特别注意，在变量引用的旧对象占用大量内存时，及时把变量置null使得GC有机会及时把内存回收。</li>
+<li>如果不需要访问对象的属性，把方法声明为static，这样方法的调用会快15%~20%。</li>
+<li>如果不希望方法被重载，把方法声明为<code>final</code>。</li>
+<li>类的内部不要用getter/setter访问成员变量，Android下虚函数的调用代价高昂。把成员设为public，直接访问。</li>
+<li>使用增强for循环<code>foreach</code>或<code>for (obj : objs)</code>。</li>
+<li>私有内部类要访问外部类的field或方法时,其成员变量不要用private，因为在编译时会生成setter/getter,影响性能。可以把外部类的field或方法声明为包访问权限。</li>
+<li>容器使用完先用clear()或removeAllElements()清空然后再置null；数组直接置null就可以，而不用每个数组元素都置null。</li>
+<li>少使用<code>浮点数</code>。<code>浮点数</code>比<code>整形</code>慢两倍。</li>
+<li>尽量原生数据类型替代包装类。使用<code>int</code>替代<code>Interger</code>。</li>
+<li><strong>慎用异常</strong>，异常对性能不利。抛出异常首先要创建一个新的对象。Throwable接口的构造函数调用名为fillInStackTrace()的本地（Native）方法，fillInStackTrace()方法检查堆栈，收集调用跟踪信息。只要有异常被抛出，VM就必须调整调用堆栈，因为在处理过程中创建了一个新的对象。<br>异常只能用于错误处理，不应该用来控制程序流程。</li>
+<li><p>少用inner class，在主类实现相应的Listener接口，处理event；inner class和anonymous class都是另外一个类，运行时都要加载到内存。但这是以牺牲main class的重用性为代价。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle icicle)</span> </span>&#123; </span><br><span class="line">        <span class="keyword">super</span>.onCreate(icicle); </span><br><span class="line">        setContentView(R.layout.content_layout_id);  </span><br><span class="line">        <span class="keyword">final</span> Button button = (Button) findViewById(R.id.button_id); </span><br><span class="line">        button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123; </span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123; </span><br><span class="line">                 <span class="comment">// Perform action on click </span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">// 编译时会多出一个类来，如果改成如下实现，则只有一个类。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span></span><br><span class="line">    // …</span><br><span class="line">    <span class="title">button</span>.<span class="title">setOnClickListener</span>(<span class="title">this</span>)</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Vector，HashTable和Stack的访问都是同步的，因此每次访问都有同步开销；不过不需要同步访问，考虑HashMap，ArrayList。</p>
+</li>
+<li>尽量使用索引去操作容器。例如用ArrayList. remove(int index)比ArrayList. remove(Object object)要快，因为它不用去查找索引。</li>
+<li>尽量使用有快速hashcode()方法的类型做hashtable的key，推荐Number类型，例如Integer, Short等，避免使用String类型的key。</li>
+<li>创建容器(Map、List、Set等)时指定适当的capacity，以减少扩容时的性能和内存损耗。</li>
+</ul>
 
       
     </div>
@@ -350,7 +422,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/权限/" rel="tag">#权限</a>
+            <a href="/tags/性能/" rel="tag">#性能</a>
           
         </div>
       
@@ -359,16 +431,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/25/hexo/markdownsample/" rel="next" title="Markdown 常用指令">
-                <i class="fa fa-chevron-left"></i> Markdown 常用指令
+              <a href="/2016/04/26/Android/translate/declare-permission/" rel="next" title="权限篇（2）----声明权限">
+                <i class="fa fa-chevron-left"></i> 权限篇（2）----声明权限
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/27/Android/study/android-optimization/" rel="prev" title="Android性能优化">
-                Android性能优化 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/27/sdudy/study-blogs/" rel="prev" title="学习资料获取来源">
+                学习资料获取来源 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -490,7 +562,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#这篇课程会教你"><span class="nav-number">1.</span> <span class="nav-text">这篇课程会教你</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明权限"><span class="nav-number">2.</span> <span class="nav-text">声明权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#明确你的App需要什么权限"><span class="nav-number">3.</span> <span class="nav-text">明确你的App需要什么权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加权限到Menifest"><span class="nav-number">4.</span> <span class="nav-text">添加权限到Menifest</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#日志"><span class="nav-number">1.</span> <span class="nav-text">日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UI相关"><span class="nav-number">2.</span> <span class="nav-text">UI相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据-内存相关"><span class="nav-number">3.</span> <span class="nav-text">数据/内存相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码相关"><span class="nav-number">4.</span> <span class="nav-text">编码相关</span></a></li></ol></div>
             
           </div>
         </section>
@@ -610,9 +682,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'ronrwin';
-      var disqus_identifier = '2016/04/26/Android/translate/declare-permission/';
-      var disqus_title = '权限篇（2）----声明权限';
-      var disqus_url = 'http://yoursite.com/2016/04/26/Android/translate/declare-permission/';
+      var disqus_identifier = '2016/04/27/Android/study/android-optimization/';
+      var disqus_title = 'Android性能优化';
+      var disqus_url = 'http://yoursite.com/2016/04/27/Android/study/android-optimization/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
