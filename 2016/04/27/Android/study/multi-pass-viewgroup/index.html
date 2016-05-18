@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="UI,性能," />
 
 
 
@@ -80,16 +80,16 @@
 
 
 
-<meta name="description" content="我要一步一步往上爬">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="多通道ViewGroup的表现研究">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Multi-pass Viewgroup性能表现">
+<meta property="og:url" content="http://yoursite.com/2016/04/27/Android/study/multi-pass-viewgroup/index.html">
 <meta property="og:site_name" content="Ronrwin">
-<meta property="og:description" content="我要一步一步往上爬">
-<meta property="og:updated_time" content="2016-04-25T14:22:25.015Z">
+<meta property="og:description" content="多通道ViewGroup的表现研究">
+<meta property="og:updated_time" content="2016-04-28T15:25:54.386Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="我要一步一步往上爬">
+<meta name="twitter:title" content="Multi-pass Viewgroup性能表现">
+<meta name="twitter:description" content="多通道ViewGroup的表现研究">
 
 
 
@@ -107,13 +107,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    标签 | Ronrwin
-  
-</title>
+  <title> Multi-pass Viewgroup性能表现 | Ronrwin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -144,7 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,16 +228,176 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 6 个标签
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Multi-pass Viewgroup性能表现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-27T10:18:17+08:00" content="2016-04-27">
+              2016-04-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/27/Android/study/multi-pass-viewgroup/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/27/Android/study/multi-pass-viewgroup/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/27/Android/study/multi-pass-viewgroup/" class="leancloud_visitors" data-flag-title="Multi-pass Viewgroup性能表现">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/Markdown/" style="font-size: 12px; color: #ccc">Markdown</a> <a href="/tags/UI/" style="font-size: 12px; color: #ccc">UI</a> <a href="/tags/工具/" style="font-size: 12px; color: #ccc">工具</a> <a href="/tags/性能/" style="font-size: 21px; color: #6f6f6f">性能</a> <a href="/tags/权限/" style="font-size: 30px; color: #111">权限</a> <a href="/tags/资料获取/" style="font-size: 12px; color: #ccc">资料获取</a>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>原文链接：<a href="http://periplanisi.com/android/2013/11/multi-pass-viewgroup-and-performance/" target="_blank" rel="external">Multi-pass ViewGroup and performance</a></p>
+<p>2009年Romain Guy写了关于使用<strong><em>RelativeLayout</em></strong>替代两个<strong><em>LinearLayout</em></strong>的好处的<a href="http://www.curious-creature.com/2009/02/22/android-layout-tricks-1/" target="_blank" rel="external">文章</a>，不幸的是，很多人阅读那篇文章以后便假设RelativeLayout对比LinearLeyou来说，在所有的场景下会更好用。这是完全<strong>错误</strong>的假设。</p>
+<p>那篇文章写得很好，讲解了应该减少视图层级和尽量少使用对象。当然第一原则是使视图尽量<strong>扁平化</strong>，避免不必要的<strong>容器</strong>，使用<strong>merge</strong>标签等。</p>
+<p>然而，这个例子并没有使得RelativeLayout比LinearLayout要好。实际上如果你查看RelativeLayout的实现，你会发现它的孩子会调用<strong><em>onMeasure</em></strong>两次！这样会降低效率。如果我们有很复杂的页面结构，而RelativeLayout处于它的根节点，那将会是很大的性能开销。<strong>所以最好不要把RelativeLayout放在视图树的顶层</strong>。</p>
+<p>当使用weight的时候，LinearLayout的子控件也会调用两次，为了计算所有控件的正确的大小。</p>
+<p>在性能考虑上，还需要注意ListView的情况。由于多通道的计算和行控件的创建，ListView的布局如果使用wrap_content也会降低性能。</p>
+<p>我们举个简单例子。</p>
+<p>我们有下面这样的xml布局：<br>使用RelativeLayout作为父容器。我们将会观察RelativeLayout的性能。并且ListView设为wrap_content。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span></span><br><span class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ListView</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/mylist"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后把item的布局如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span></span><br><span class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">    &gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">"@string/some_text"</span></span><br><span class="line">        /&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我们运行一下。假设有20行，那么TextView就会调用<strong>320</strong>次onMeasure！！！</p>
+<p>这里我们有3点可以提升的地方，减少一半的计算次数。</p>
+<ul>
+<li>把RelativeLayout转换成LinearLayout</li>
+<li>把item的wrap_content改为match_parent</li>
+<li>把每一行的item容器由RelativeLayout转为LinearLayout</li>
+</ul>
+<p>我们把次数降低到了40次（减少了8倍），加载时间加快了100ms，在复杂的布局上，提升会更显著。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/UI/" rel="tag">#UI</a>
+          
+            <a href="/tags/性能/" rel="tag">#性能</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/26/Android/translate/declare-permission/" rel="next" title="权限篇（2）----声明权限">
+                <i class="fa fa-chevron-left"></i> 权限篇（2）----声明权限
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/27/Android/study/android-optimization/" rel="prev" title="Android性能优化">
+                Android性能优化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -282,8 +436,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -333,6 +496,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -429,6 +603,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -445,9 +623,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'ronrwin';
-      var disqus_identifier = 'tags/index.html';
-      var disqus_title = 'tags';
-      var disqus_url = 'http://yoursite.com/tags/index.html';
+      var disqus_identifier = '2016/04/27/Android/study/multi-pass-viewgroup/';
+      var disqus_title = 'Multi-pass Viewgroup性能表现';
+      var disqus_url = 'http://yoursite.com/2016/04/27/Android/study/multi-pass-viewgroup/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
