@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="工具," />
+  <meta name="keywords" content="性能," />
 
 
 
@@ -80,18 +80,21 @@
 
 
 
-<meta name="description" content="ChkBugReport是一个开源工具，它可以把你得到的bugreprot解析成适合阅读的html文件。导出的html文件包含了根据bugreport数据得出的图表和分析结论。">
+<meta name="description" content="battery-historian是谷歌推荐使用的电量检测工具，我们看下应该如何使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bugreport分析工具----ChkBugReport简介">
-<meta property="og:url" content="http://yoursite.com/2016/05/17/Android/study/new-bugreport-analysis-tool-released-as-open-source/index.html">
+<meta property="og:title" content="电量监控----battery-historian">
+<meta property="og:url" content="http://yoursite.com/2016/05/24/Android/study/battery-historian/index.html">
 <meta property="og:site_name" content="Ronrwin">
-<meta property="og:description" content="ChkBugReport是一个开源工具，它可以把你得到的bugreprot解析成适合阅读的html文件。导出的html文件包含了根据bugreport数据得出的图表和分析结论。">
-<meta property="og:image" content="http://yoursite.com/image/chkbugreport_screenshot_001.png">
-<meta property="og:updated_time" content="2016-05-20T08:04:45.732Z">
+<meta property="og:description" content="battery-historian是谷歌推荐使用的电量检测工具，我们看下应该如何使用">
+<meta property="og:image" content="http://yoursite.com/image/battery-historian-local.png">
+<meta property="og:image" content="http://yoursite.com/image/battery-historian-web1.png">
+<meta property="og:image" content="http://yoursite.com/image/battery-historian-web2.png">
+<meta property="og:image" content="http://yoursite.com/image/battery-historian-web3.png">
+<meta property="og:updated_time" content="2016-05-24T15:42:22.370Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bugreport分析工具----ChkBugReport简介">
-<meta name="twitter:description" content="ChkBugReport是一个开源工具，它可以把你得到的bugreprot解析成适合阅读的html文件。导出的html文件包含了根据bugreport数据得出的图表和分析结论。">
-<meta name="twitter:image" content="http://yoursite.com/image/chkbugreport_screenshot_001.png">
+<meta name="twitter:title" content="电量监控----battery-historian">
+<meta name="twitter:description" content="battery-historian是谷歌推荐使用的电量检测工具，我们看下应该如何使用">
+<meta name="twitter:image" content="http://yoursite.com/image/battery-historian-local.png">
 
 
 
@@ -109,7 +112,7 @@
   };
 </script>
 
-  <title> bugreport分析工具----ChkBugReport简介 | Ronrwin </title>
+  <title> 电量监控----battery-historian | Ronrwin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +252,7 @@
             
             
               
-                bugreport分析工具----ChkBugReport简介
+                电量监控----battery-historian
               
             
           </h1>
@@ -261,8 +264,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-17T22:12:25+08:00" content="2016-05-17">
-              2016-05-17
+            <time itemprop="dateCreated" datetime="2016-05-24T23:15:50+08:00" content="2016-05-24">
+              2016-05-24
             </time>
           </span>
 
@@ -291,8 +294,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/17/Android/study/new-bugreport-analysis-tool-released-as-open-source/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/17/Android/study/new-bugreport-analysis-tool-released-as-open-source/" itemprop="commentsCount"></span>
+                <a href="/2016/05/24/Android/study/battery-historian/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/24/Android/study/battery-historian/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -302,7 +305,7 @@
 
           
           
-             <span id="/2016/05/17/Android/study/new-bugreport-analysis-tool-released-as-open-source/" class="leancloud_visitors" data-flag-title="bugreport分析工具----ChkBugReport简介">
+             <span id="/2016/05/24/Android/study/battery-historian/" class="leancloud_visitors" data-flag-title="电量监控----battery-historian">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -324,48 +327,24 @@
       
 
       
-        <p>原文链接：<a href="http://developer.sonymobile.com/2012/01/25/new-bugreport-analysis-tool-released-as-open-source/" target="_blank" rel="external">New bugreport analysis tool released as open source</a></p>
-<p>在安卓开发过程中，是否经常会遇到 <code>Application Not Responding (ANR)</code>信息和崩溃信息？这些信息都记录在bugreport文件中，但是信息繁杂，我们该如何准确筛选需要的信息呢？这需要使用到ChkBugReport来辅助分析。</p>
-<p>下载地址：<a href="https://github.com/sonyxperiadev/ChkBugReport/downloads" target="_blank" rel="external">https://github.com/sonyxperiadev/ChkBugReport/downloads</a></p>
-<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>把jar文件下载下来。</p>
-<p>从手机中导出bugreport文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell bugreport &gt; bugreport.txt</span><br></pre></td></tr></table></figure></p>
-<p>之后运行ChkBugReport:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java –jar chkbugreport.jar bugreport.txt</span><br></pre></td></tr></table></figure></p>
-<p>执行之后将生成html文件。</p>
-<h2 id="了解ChkBugReport的输出"><a href="#了解ChkBugReport的输出" class="headerlink" title="了解ChkBugReport的输出"></a>了解ChkBugReport的输出</h2><p>bugreport文件包括了几部分，每一部分都是一个文件的内容拷贝（例如<code>/data/system/packages.xml</code>）、一个应用的输出（例如<code>top</code>）或者是一个服务的堆栈（例如<code>window manager service</code>）。</p>
-<p>ChkBugReport解析该文件并分成几个部分，方便用户快速找到想要分析的部分。这些部分会保存在<code>bugreport_out/raw</code>，以便用户方便找到。</p>
-<p>作为第二步，工具执行一系列的build-in插件，负责运行一个或者几个分析的部分。这些插件的输出会保存到报告里分开的章节中，最终保存为一个html文件。在浏览器中打开<code>index.html</code>，就可以开始分析bugreport了。<br><img src="/image/chkbugreport_screenshot_001.png" alt="bugreport截图" title="bugreport截图"></p>
-<p>插件还可以检测错误。例如，系统日志分析可以找到ANR报告。这些都被归纳到<code>Errors</code>部分中，可以方便找到。</p>
-<p>每个插件会提供每个进程的片段，叫<code>Processes</code>。这样，你可以找到某个特定进程的所有信息（内存使用， 系统日志等等）。</p>
-<p>现在，ChkBugReport有实现如下插件</p>
-<ul>
-<li>BatteryInfoPlugin —- 提取电量使用信息并画出消耗图表。</li>
-<li>CpuFreqPlugin —- 展示CPU支持的频率，以及它们的使用时间。</li>
-<li>SystemLogPlugin, MainLogPlugin 以及 EventLogPlugin —- 这些插件分别提取下面几部分的信息：<ul>
-<li>GC日志的内存使用</li>
-<li>数据库和ContentProvider的时间数据</li>
-<li>进程和服务生命周期图表</li>
-<li>崩溃和ANR</li>
-<li>配置修改</li>
-<li>Activitiy启动</li>
-</ul>
-</li>
-<li>FTracePlugin  —- 如果<a href="http://www.mjmwired.net/kernel/Documentation/trace/ftrace.txt" target="_blank" rel="external">FTrace</a>功能在内核中可用，Android bugreport工具则支持保存追溯缓冲。插件可以分析追溯和建立统计并归纳成图表。例如，展示哪一个线程在运行以及等待时长。并且会保存VCD格式的信息，所以我们可以使用<a href="http://gtkwave.sourceforge.net/" target="_blank" rel="external">GtkWave</a>分析追溯信息</li>
-<li>MemPlugin —- 从不同的资源中提取内存使用</li>
-<li>StackTracePlugin —- 分析栈追溯并且侦测一些程序错误（例如，尝试在主线程建立网络连接）。</li>
-<li>SurfaceFlingerPlugin —- 层级可视化</li>
-<li>WindowManagerPlugin —- 重构窗口列表</li>
-</ul>
-<p>这是ChkBugReport功能的一个例子，这个工具从bugreport提取了很多有价值的信息。我们会不断在<a href="https://github.com/sonyxperiadev/ChkBugReport/wiki" target="_blank" rel="external">Github</a>上增加新功能，会逐个解释功能。我们也会在<a href="http://forum.xda-developers.com/showthread.php?p=21804810#post21804810" target="_blank" rel="external">ChkBugReport forum thread</a>XDA论坛更新。</p>
-<p>更多资料：</p>
-<ul>
-<li>从<a href="http://forum.xda-developers.com/showthread.php?p=21804810#post21804810" target="_blank" rel="external">ChkBugReport forum thread</a>获取最新更新</li>
-<li>下载<a href="https://github.com/sonyericssondev/ChkBugReport" target="_blank" rel="external">ChkBugReport</a>源代码</li>
-<li>Wiki: <a href="https://github.com/sonyxperiadev/ChkBugReport/wiki/" target="_blank" rel="external">https://github.com/sonyxperiadev/ChkBugReport/wiki/</a></li>
-<li><a href="https://github.com/sonyxperiadev/ChkBugReport/wiki/How-to-install-it" target="_blank" rel="external">安装指导</a></li>
-<li>阅读<a href="http://www.mjmwired.net/kernel/Documentation/trace/ftrace.txt" target="_blank" rel="external">FTRACE</a>功能</li>
-<li><a href="http://gtkwave.sourceforge.net/" target="_blank" rel="external">GtkWave</a></li>
-<li>学习更多关于GC–<a href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science" target="_blank" rel="external">Garbage Collection</a>)</li>
-</ul>
+        <p>在Android项目中，较难监控应用的电量消耗，但是用户却非常关心手机的待机时间。 过度耗电的应用， 会遭到用户无情的卸载，不要存在侥幸心理。</p>
+<p>battery-historian是一款由Google提供的Android系统电量分析工具。该工具支持Android 5.0 Lollipop（API 21）以上。也可以参照官方的文档：<a href="http://developer.android.com/intl/zh-cn/tools/performance/batterystats-battery-historian/index.html" target="_blank" rel="external">http://developer.android.com/intl/zh-cn/tools/performance/batterystats-battery-historian/index.html</a></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1、GO语言及安装</p>
+<pre><code>- 下载地址：http://golang.org/doc/install 。
+- 建立工作路径，参考http://golang.org/doc/code.html#Organization.
+- 设置环境变量。（GO安装执行完后自动设置了环境变量。如果没有的话，需要自己手动设置）
+</code></pre><p>2、安装Git，链接<a href="https://git-scm.com/downloads" target="_blank" rel="external">https://git-scm.com/downloads</a> 。<br>3、安装Python 2.7（不是Python 3.x），链接<a href="https://python.org/downloads" target="_blank" rel="external">https://python.org/downloads</a> 。<br>4、安装Java，<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>.<br>5、下载Battery Historian :<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">go</span> get -d -u github.com/google/battery-historian/</span><br></pre></td></tr></table></figure></p>
+<p>6、安装并运行Battery Historian<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cd $GOPATH/src/github.com/google/battery-historian</span><br><span class="line"> </span><br><span class="line"># Compile Javascript files using the Closure compiler</span><br><span class="line">$ <span class="keyword">go</span> run setup.<span class="keyword">go</span></span><br><span class="line"> </span><br><span class="line"># Run Historian on your machine (<span class="built_in">make</span> sure $PATH contains $GOBIN)</span><br><span class="line">$ <span class="keyword">go</span> run cmd/battery-historian/battery-historian.<span class="keyword">go</span> [--port &lt;<span class="keyword">default</span>:<span class="number">9999</span>&gt;]</span><br></pre></td></tr></table></figure></p>
+<p>执行之后，访问<a href="http://localhost:9999/就可以开始分析过程了。" target="_blank" rel="external">http://localhost:9999/就可以开始分析过程了。</a></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h4 id="重置数据"><a href="#重置数据" class="headerlink" title="重置数据"></a>重置数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys batterystats --enable full-wake-history</span><br><span class="line">shell dumpsys batterystats --reset</span><br></pre></td></tr></table></figure>
+<h4 id="输出bugreport文件"><a href="#输出bugreport文件" class="headerlink" title="输出bugreport文件"></a>输出bugreport文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb bugreport &gt; bugreport.txt</span><br></pre></td></tr></table></figure>
+<h4 id="生成分析文件"><a href="#生成分析文件" class="headerlink" title="生成分析文件"></a>生成分析文件</h4><p>我们有两种方式来获取分析结果文件<br>1、使用battery historian包里的python脚本来生成html文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; adb shell dumpsys batterystats &gt; batterystats.txt</span><br><span class="line">&gt; python scripts/historian.py batterystats.txt &gt; batterystats.html</span><br></pre></td></tr></table></figure></p>
+<p>打开batterystats.html，我们可以看到如下的分析界面了：<br><img src="/image/battery-historian-local.png" alt="监控" title="battery-historian.html"></p>
+<p>2、上传bugreport文件分析<br>我们进入到battery-historian目录，执行启动指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH/src/github.com/google/battery-historian</span><br><span class="line">go run cmd/battery-historian/battery-historian.go [--port &lt;default:9999&gt;]</span><br></pre></td></tr></table></figure></p>
+<p>访问<a href="http://localhost:9999，上传bugreport.txt文件，之后就可以得到下面的分析界面：" target="_blank" rel="external">http://localhost:9999，上传bugreport.txt文件，之后就可以得到下面的分析界面：</a><br><img src="/image/battery-historian-web1.png" alt="联网分析1"><br><img src="/image/battery-historian-web2.png" alt="联网分析1"><br>切换到App Stats，可以分析具体的app情况<br><img src="/image/battery-historian-web3.png" alt="联网分析1"></p>
+<h2 id="指标说明"><a href="#指标说明" class="headerlink" title="指标说明"></a>指标说明</h2><h4 id="横坐标"><a href="#横坐标" class="headerlink" title="横坐标"></a>横坐标</h4><p>横坐标是表示时间段的分割，方便我们观察某个时间段或时间跨度的的数据。</p>
+<h4 id="纵坐标"><a href="#纵坐标" class="headerlink" title="纵坐标"></a>纵坐标</h4><p>battery_level：当前电量值。<br>plugged：是否充电状态。<br>screen：屏幕是否点亮，这一点可以考虑到睡眠状态和点亮状态下电量的使用信息。<br>top：该栏显示当前时刻哪个app处于最上层，就是当前手机运行的app，用来判断某个app对手机电量的影响，这样也能判断出该app的耗电量信息。该栏记录了应用在某一个时刻启动，以及运行的时间，这对我们比对不同应用对性能的影响有很大的帮助。<br>wake_lock：记录wake_lock模块的工作时间。是否有停止的时候等。<br>sync：发生同步操作的对象。<br>running：界面的状态，主要判断是否处于idle的状态。用来判断无操作状态下电量的消耗。<br>wake_reason：唤醒的原因。<br>wake_lock_in：wake_lock有不同的组件，这个地方记录在某一个时刻，有哪些部件开始工作，以及工作的时间。<br>conn：数据连接方式。是无连接，还是wifi、2g/3g/4g。<br>status：电池状态信息，有充电，放电，未充电，已充满，未知等不同状态。 这一栏记录了电池状态的改变信息。<br>phone_signal_strength：手机信号强度变化<br>wifi_signal_strength：wifi信号强度。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个工具是谷歌官方使用的电量监测工具。数据来源是从手机的bugreport中获取，并绘制成图表以方便我们作分析。由于电量的记录是以电池状态为主，所以我们不能从该分析中准确知道哪个应用使用了多少电量。我们可以从电量的使用效率趋势上面获取到大概的信息，并从具体的app分析结果中得出大概的电量使用趋势。</p>
 
       
     </div>
@@ -386,7 +365,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/工具/" rel="tag">#工具</a>
+            <a href="/tags/性能/" rel="tag">#性能</a>
           
         </div>
       
@@ -395,17 +374,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/03/Android/translate/request-permission-at-run-time/" rel="next" title="权限篇（3）----运行时请求权限">
-                <i class="fa fa-chevron-left"></i> 权限篇（3）----运行时请求权限
+              <a href="/2016/05/17/Android/study/new-bugreport-analysis-tool-released-as-open-source/" rel="next" title="bugreport分析工具----ChkBugReport简介">
+                <i class="fa fa-chevron-left"></i> bugreport分析工具----ChkBugReport简介
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/24/Android/study/battery-historian/" rel="prev" title="电量监控----battery-historian">
-                电量监控----battery-historian <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -526,7 +501,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用"><span class="nav-number">1.</span> <span class="nav-text">如何使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#了解ChkBugReport的输出"><span class="nav-number">2.</span> <span class="nav-text">了解ChkBugReport的输出</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#重置数据"><span class="nav-number">2.0.1.</span> <span class="nav-text">重置数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出bugreport文件"><span class="nav-number">2.0.2.</span> <span class="nav-text">输出bugreport文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成分析文件"><span class="nav-number">2.0.3.</span> <span class="nav-text">生成分析文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指标说明"><span class="nav-number">3.</span> <span class="nav-text">指标说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#横坐标"><span class="nav-number">3.0.1.</span> <span class="nav-text">横坐标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#纵坐标"><span class="nav-number">3.0.2.</span> <span class="nav-text">纵坐标</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
         </section>
@@ -646,9 +621,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'ronrwin';
-      var disqus_identifier = '2016/05/17/Android/study/new-bugreport-analysis-tool-released-as-open-source/';
-      var disqus_title = 'bugreport分析工具----ChkBugReport简介';
-      var disqus_url = 'http://yoursite.com/2016/05/17/Android/study/new-bugreport-analysis-tool-released-as-open-source/';
+      var disqus_identifier = '2016/05/24/Android/study/battery-historian/';
+      var disqus_title = '电量监控----battery-historian';
+      var disqus_url = 'http://yoursite.com/2016/05/24/Android/study/battery-historian/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
