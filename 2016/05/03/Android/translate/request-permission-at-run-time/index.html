@@ -86,12 +86,12 @@
 <meta property="og:url" content="http://yoursite.com/2016/05/03/Android/translate/request-permission-at-run-time/index.html">
 <meta property="og:site_name" content="Ronrwin">
 <meta property="og:description" content="运行时的权限操作。">
-<meta property="og:image" content="http://yoursite.com/image/request_permission_dialog.png">
-<meta property="og:updated_time" content="2016-05-20T08:03:06.346Z">
+<meta property="og:image" content="http://yoursite.com/image/permission/request_permission_dialog.png">
+<meta property="og:updated_time" content="2016-06-18T09:33:28.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="权限篇（3）----运行时请求权限">
 <meta name="twitter:description" content="运行时的权限操作。">
-<meta name="twitter:image" content="http://yoursite.com/image/request_permission_dialog.png">
+<meta name="twitter:image" content="http://yoursite.com/image/permission/request_permission_dialog.png">
 
 
 
@@ -347,7 +347,7 @@
 <p>如果应用具备权限，该方法返回<a href="http://developer.android.com/intl/zh-cn/reference/android/content/pm/PackageManager.html#PERMISSION_GRANTED" target="_blank" rel="external">PackageManager.PERMISSION_GRANTED</a>，应用得以继续运行。如果不具备权限，该方法返回<a href="http://developer.android.com/intl/zh-cn/reference/android/content/pm/PackageManager.html#PERMISSION_DENIED" target="_blank" rel="external">PERMISSION_DENIED</a>，应用必须请求用户授予权限。</p>
 <h2 id="请求权限"><a href="#请求权限" class="headerlink" title="请求权限"></a>请求权限</h2><p>如果应用需要一项配置文件中申声明的危险权限，它必须请求用户授予该权限。Android提供几种方法去请求权限。调用这些方法会弹出基本对话框，样式由系统定义。</p>
 <h4 id="解释为什么应用需要权限"><a href="#解释为什么应用需要权限" class="headerlink" title="解释为什么应用需要权限"></a>解释为什么应用需要权限</h4><p>在某些情况下，你需要让用户理解为什么应用需要这些权限。例如，如果用户启动一个摄影应用，用户对于请求相机权限不会感到惊讶，但是用户会迷惑为什么应用需要获取地理位置和联系人的权限。当你请求一项权限时，你需要让用户知道原因。记住，你不会想要用解释来强迫用户；如果你使用太多的解释，用户有可能会删除应用。</p>
-<p><img src="/image/request_permission_dialog.png" alt="权限请求提示框" title="系统弹框提示用户授予或拒绝权限"></p>
+<p><img src="/image/permission/request_permission_dialog.png" alt="权限请求提示框" title="系统弹框提示用户授予或拒绝权限"></p>
 <p>一种情形是需要向用户解释的。如果用户不断尝试使用某项功能却不断的拒绝授予权限，那么很可能用户并不知道该功能为何需要该权限，此时就需要向用户解释该权限的必要性。</p>
 <p>为了更方便发现什么时候用户需要权限解释，Android提供了方法<a href="http://developer.android.com/intl/zh-cn/reference/android/support/v4/app/ActivityCompat.html#shouldShowRequestPermissionRationale(android.app.Activity, java.lang.String" target="_blank" rel="external">shouldShowRequestPermissionRationale()</a>。返回True说明应用已经请求过权限但是用户拒绝了。</p>
 <blockquote>
@@ -403,7 +403,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/17/Android/study/new-bugreport-analysis-tool-released-as-open-source/" rel="prev" title="bugreport分析工具----ChkBugReport简介">
+              <a href="/2016/05/17/Android/study/bugreport-analysis/" rel="prev" title="bugreport分析工具----ChkBugReport简介">
                 bugreport分析工具----ChkBugReport简介 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -480,7 +480,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -488,7 +488,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -497,7 +497,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
