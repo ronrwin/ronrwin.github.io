@@ -249,8 +249,144 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/30/study/design_pattern/strategy-pattern/" itemprop="url">
+                  设计模式----策略模式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-30T21:14:58+08:00" content="2016-06-30">
+              2016-06-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/30/study/design_pattern/strategy-pattern/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/30/study/design_pattern/strategy-pattern/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/30/study/design_pattern/strategy-pattern/" class="leancloud_visitors" data-flag-title="设计模式----策略模式">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>设计模式系列，资料来源：<a href="http://blog.csdn.net/lovelion/article/details/17517213">史上最全设计模式导学目录（完整版）</a>，文章写得非常详细。<br>站在巨人的肩膀上，这里是对于每一篇的摘录，算是作为自己对这方面知识的学习记录。</p>
+<h2 id="策略模式概述"><a href="#策略模式概述" class="headerlink" title="策略模式概述"></a>策略模式概述</h2><p>在策略模式中，我们可以定义一些独立的类来封装不同的算法，每一个类封装一种具体的算法，在这里，每一个封装算法的类我们都可以称之为一种策略(Strategy)，为了保证这些策略在使用时具有一致性，一般会提供一个抽象的策略类来做规则的定义，而每种算法则对应于一个具体策略类。</p>
+<p>策略模式的主要目的是将算法的定义与使用分开，也就是将算法的行为和环境分开，将算法的定义放在专门的策略类中，每一个策略类封装了一种实现算法，使用算法的环境类针对抽象策略类进行编程，符合“依赖倒转原则”。在出现新的算法时，只需要增加一个新的实现了抽象策略类的具体策略类即可。</p>
+<blockquote>
+<p><strong>策略模式(Strategy Pattern)：定义一系列算法类，将每一个算法封装起来，并让它们可以相互替换，策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。策略模式是一种对象行为型模式。</strong></p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/30/study/design_pattern/strategy-pattern/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/27/study/design_pattern/oop-principles/" itemprop="url">
-                  面向对象六大原则（转）
+                  面向对象原则（转）
                 </a>
               
             
@@ -304,7 +440,7 @@
 
           
           
-             <span id="/2016/06/27/study/design_pattern/oop-principles/" class="leancloud_visitors" data-flag-title="面向对象六大原则（转）">
+             <span id="/2016/06/27/study/design_pattern/oop-principles/" class="leancloud_visitors" data-flag-title="面向对象原则（转）">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -330,10 +466,142 @@
           <p>原文链接：<a href="https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/blob/master/oop-principles/oop-principles.md">面向对象六大原则</a></p>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>在工作初期，我们可能会经常会有这样的感觉，自己的代码接口设计混乱、代码耦合较为严重、一个类的代码过多等等，自己回头看的时候都觉得汗颜。再看那些知名的开源库，它们大多有着整洁的代码、清晰简单的接口、职责单一的类，这个时候我们通常会捶胸顿足而感叹：什么时候老夫才能写出这样的代码！     </p>
 <p>在做开发的这些年中，我渐渐的感觉到，其实国内的一些初、中级工程师写的东西不规范或者说不够清晰的原因是缺乏一些指导原则。他们手中挥舞着面向对象的大旗，写出来的东西却充斥着面向过程的气味。也许是他们不知道有这些原则，也许是他们知道但是不能很好运用到实际代码中，亦或是他们没有在实战项目中体会到这些原则能够带来的优点，以至于他们对这些原则并没有足够的重视。     </p>
-<p>今天，我们就是以剖析优秀的Android网络框架Volley为例来学习这六大面向对象的基本原则，体会它们带来的强大能量。         </p>
+<p>今天，我们就是以剖析优秀的Android网络框架Volley为例来学习这些面向对象的基本原则，体会它们带来的强大能量。         </p>
 <p>在此之前，有一点需要大家知道，熟悉这些原则不会让你写出优秀的代码，只是为你的优秀代码之路铺上了一层栅栏，在这些原则的指导下你才能避免陷入一些常见的代码泥沼，从而让你专心写出优秀的东西。另外，我是个新人，以下只是我个人的观点。如果你觉得还行，可以顶个帖支持一下；如果你觉得它烂透了，那请分享你的经验。         </p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/06/27/study/design_pattern/oop-principles/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/27/study/design_pattern/chain-of-responsibility/" itemprop="url">
+                  设计模式（2）----责任链模式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-27T13:49:22+08:00" content="2016-06-27">
+              2016-06-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/开发/" itemprop="url" rel="index">
+                    <span itemprop="name">开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/27/study/design_pattern/chain-of-responsibility/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/27/study/design_pattern/chain-of-responsibility/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/27/study/design_pattern/chain-of-responsibility/" class="leancloud_visitors" data-flag-title="设计模式（2）----责任链模式">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>设计模式系列，资料来源：<a href="http://blog.csdn.net/lovelion/article/details/17517213">史上最全设计模式导学目录（完整版）</a>，文章写得非常详细。<br>站在巨人的肩膀上，这里是对于每一篇的摘录，算是作为自己对这方面知识的学习记录。</p>
+<h2 id="职责链模式概述"><a href="#职责链模式概述" class="headerlink" title="职责链模式概述"></a>职责链模式概述</h2><p><strong>职责链模式(Chain of Responsibility  Pattern)：避免请求发送者与接收者耦合在一起，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。职责链模式是一种对象行为型模式。</strong></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/27/study/design_pattern/chain-of-responsibility/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -601,7 +869,7 @@
       
         
           <p>在Android中，我们可以使用ContentObserver监听ContentProvider数据的变化。</p>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">mPhotoObserver = <span class="keyword">new</span> PhotoObserver(<span class="keyword">new</span> Handler());</span><br><span class="line"><span class="comment">// 注册观察者</span></span><br><span class="line">getContentResolver().registerContentObserver(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, <span class="keyword">true</span>, mPhotoObserver);</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 监听图片变化</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PhotoObserver</span> <span class="keyword">extends</span> <span class="title">ContentObserver</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">PhotoObserver</span><span class="params">(Handler handler)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span>(handler);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onChange</span><span class="params">(<span class="keyword">boolean</span> selfChange)</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onChange</span><span class="params">(<span class="keyword">boolean</span> selfChange, Uri uri)</span> </span>&#123;</span><br><span class="line">            Log.d(<span class="string">"image onChange"</span>, selfChange + <span class="string">", "</span> + uri);</span><br><span class="line"> </span><br><span class="line">            <span class="comment">//查询出第一条记录</span></span><br><span class="line">            Cursor c = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="string">"_id DESC LIMIT 1"</span>);</span><br><span class="line"><span class="comment">//                Cursor c = getContentResolver().query(uri, null, null, null, "_id DESC LIMIT 1");</span></span><br><span class="line">            <span class="keyword">if</span> (c.moveToNext()) &#123;</span><br><span class="line">                <span class="keyword">int</span> imageId = c.getInt((c.getColumnIndex(MediaStore.Images.Media._ID)));</span><br><span class="line">                Bitmap bm = MediaStore.Images.Thumbnails.getThumbnail(getContentResolver(),</span><br><span class="line">                        imageId, MediaStore.Images.Thumbnails.MINI_KIND, <span class="keyword">null</span>);</span><br><span class="line"> </span><br><span class="line">                Toast toast = Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"刚才的IMG"</span>, Toast.LENGTH_SHORT);</span><br><span class="line">                toast.setGravity(Gravity.CENTER, <span class="number">20</span>, <span class="number">69</span>);</span><br><span class="line">                LinearLayout linearLayout = (LinearLayout) toast.getView();</span><br><span class="line">                ImageView imageView = <span class="keyword">new</span> ImageView(MainActivity.<span class="keyword">this</span>);</span><br><span class="line">                imageView.setImageBitmap(bm);</span><br><span class="line">                linearLayout.addView(imageView, <span class="number">1</span>);</span><br><span class="line">                toast.setView(linearLayout);</span><br><span class="line">                toast.show();</span><br><span class="line">            &#125;</span><br><span class="line">            c.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">mPhotoObserver = <span class="keyword">new</span> PhotoObserver(<span class="keyword">new</span> Handler());</span><br><span class="line"><span class="comment">// 注册观察者</span></span><br><span class="line">getContentResolver().registerContentObserver(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, <span class="keyword">true</span>, mPhotoObserver);</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 监听图片变化</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PhotoObserver</span> <span class="keyword">extends</span> <span class="title">ContentObserver</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">PhotoObserver</span><span class="params">(Handler handler)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span>(handler);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onChange</span><span class="params">(<span class="keyword">boolean</span> selfChange)</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onChange</span><span class="params">(<span class="keyword">boolean</span> selfChange, Uri uri)</span> </span>&#123;</span><br><span class="line">            Log.d(<span class="string">"image onChange"</span>, selfChange + <span class="string">", "</span> + uri);</span><br><span class="line"> </span><br><span class="line">            <span class="comment">//查询出第一条记录</span></span><br><span class="line">            Cursor c = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="string">"_id DESC LIMIT 1"</span>);</span><br><span class="line"><span class="comment">//                Cursor c = getContentResolver().query(uri, null, null, null, "_id DESC LIMIT 1");</span></span><br><span class="line">            <span class="keyword">if</span> (c.moveToNext()) &#123;</span><br><span class="line">                <span class="keyword">int</span> imageId = c.getInt((c.getColumnIndex(MediaStore.Images.Media._ID)));</span><br><span class="line">				String title = c.getString(c.getColumnIndex(MediaStore.Files.FileColumns.DATA));</span><br><span class="line">                Bitmap bm = MediaStore.Images.Thumbnails.getThumbnail(getContentResolver(),</span><br><span class="line">                        imageId, MediaStore.Images.Thumbnails.MINI_KIND, <span class="keyword">null</span>);</span><br><span class="line"> </span><br><span class="line">                Toast toast = Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"刚才的IMG :"</span> + title, Toast.LENGTH_SHORT);</span><br><span class="line">                toast.setGravity(Gravity.CENTER, <span class="number">20</span>, <span class="number">69</span>);</span><br><span class="line">                LinearLayout linearLayout = (LinearLayout) toast.getView();</span><br><span class="line">                ImageView imageView = <span class="keyword">new</span> ImageView(MainActivity.<span class="keyword">this</span>);</span><br><span class="line">                imageView.setImageBitmap(bm);</span><br><span class="line">                linearLayout.addView(imageView, <span class="number">1</span>);</span><br><span class="line">                toast.setView(linearLayout);</span><br><span class="line">                toast.show();</span><br><span class="line">            &#125;</span><br><span class="line">            c.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/06/21/Android/study/contentobserver/#more" rel="contents">
               阅读全文 &raquo;
@@ -1294,274 +1562,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/15/Android/study/device-policy-manager/" itemprop="url">
-                  DevicePolicyManager防卸载
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-15T21:25:16+08:00" content="2016-06-15">
-              2016-06-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/15/Android/study/device-policy-manager/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/15/Android/study/device-policy-manager/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/06/15/Android/study/device-policy-manager/" class="leancloud_visitors" data-flag-title="DevicePolicyManager防卸载">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="设备管理器？"><a href="#设备管理器？" class="headerlink" title="设备管理器？"></a>设备管理器？</h2><p>Android 2.2 介绍了通过提供设备管理器来支持企业级应用的开发。设备管理器API提供了系统级别的一些功能，允许企业使用一些安全敏感的应用来开发更多内部的应用。<br>官方介绍：<a href="https://developer.android.com/guide/topics/admin/device-admin.html#overview">https://developer.android.com/guide/topics/admin/device-admin.html#overview</a></p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>首先，我们需要在配置文件中声明一个DeviceAdminReceiver的继承类，这里命名为MyDeviceReceiver。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 把receiver去掉覆盖安装即可正常删除apk --&gt;</span><br><span class="line">&lt;receiver</span><br><span class="line">    android:name=".MyDeviceReceiver"</span><br><span class="line">    android:label="@string/app_name"</span><br><span class="line">    android:permission="android.permission.BIND_DEVICE_ADMIN"&gt;  &lt;!-- 需要声明权限 --&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;meta-data</span><br><span class="line">        android:name="android.app.device_admin"</span><br><span class="line">        android:resource="@xml/device_admin_sample" /&gt;</span><br><span class="line"> </span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;!--此处必须设定该Action，不设定则无法启动设备管理器--&gt;</span><br><span class="line">        &lt;action android:name="android.app.action.DEVICE_ADMIN_ENABLED" /&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/receiver&gt;</span><br></pre></td></tr></table></figure></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/15/Android/study/device-policy-manager/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/09/study/okhttp/" itemprop="url">
-                  关于okhttp
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-09T14:39:58+08:00" content="2016-06-09">
-              2016-06-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/09/study/okhttp/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/09/study/okhttp/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/06/09/study/okhttp/" class="leancloud_visitors" data-flag-title="关于okhttp">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>项目github地址：<a href="https://github.com/square/okhttp">OkHttp</a><br>官方简介：OkHttp是一款优秀的HTTP框架，它支持get请求和post请求，支持基于Http的文件上传和下载，支持加载图片，支持下载文件透明的GZIP压缩，支持响应缓存避免重复的网络请求，支持使用连接池来降低响应延迟问题。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/09/study/okhttp/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1602,7 +1607,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
