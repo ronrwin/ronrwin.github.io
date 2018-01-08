@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,41 +34,38 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
   
   
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
 
 
   <meta name="keywords" content="设计模式," />
@@ -73,52 +77,62 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
 
 
-
-
-
-
-<meta name="description" content="设计模式系列，资料来源：史上最全设计模式导学目录（完整版），文章写得非常详细。站在巨人的肩膀上，这里是对于每一篇的摘录，算是作为自己对这方面知识的学习记录。
-概述装饰模式可以在不改变一个对象本身功能的基础上给对象增加额外的新行为，在现实生活中，这种情况也到处存在，例如一张照片，我们可以不改变照片本身，给它增加一个相框，使得它具有防潮的功能，而且用户可以根据需要给它增加不同类型的相框，甚至可以在一个">
+<meta name="description" content="设计模式系列，资料来源：史上最全设计模式导学目录（完整版），文章写得非常详细。站在巨人的肩膀上，这里是对于每一篇的摘录，算是作为自己对这方面知识的学习记录。 概述装饰模式可以在不改变一个对象本身功能的基础上给对象增加额外的新行为，在现实生活中，这种情况也到处存在，例如一张照片，我们可以不改变照片本身，给它增加一个相框，使得它具有防潮的功能，而且用户可以根据需要给它增加不同类型的相框，甚至可以在一个">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式----装饰者模式">
 <meta property="og:url" content="http://yoursite.com/2016/07/06/study/design_pattern/decorator-pattern/index.html">
 <meta property="og:site_name" content="Ronrwin">
-<meta property="og:description" content="设计模式系列，资料来源：史上最全设计模式导学目录（完整版），文章写得非常详细。站在巨人的肩膀上，这里是对于每一篇的摘录，算是作为自己对这方面知识的学习记录。
-概述装饰模式可以在不改变一个对象本身功能的基础上给对象增加额外的新行为，在现实生活中，这种情况也到处存在，例如一张照片，我们可以不改变照片本身，给它增加一个相框，使得它具有防潮的功能，而且用户可以根据需要给它增加不同类型的相框，甚至可以在一个">
+<meta property="og:description" content="设计模式系列，资料来源：史上最全设计模式导学目录（完整版），文章写得非常详细。站在巨人的肩膀上，这里是对于每一篇的摘录，算是作为自己对这方面知识的学习记录。 概述装饰模式可以在不改变一个对象本身功能的基础上给对象增加额外的新行为，在现实生活中，这种情况也到处存在，例如一张照片，我们可以不改变照片本身，给它增加一个相框，使得它具有防潮的功能，而且用户可以根据需要给它增加不同类型的相框，甚至可以在一个">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://my.csdn.net/uploads/201204/04/1333528185_7832.gif">
 <meta property="og:image" content="http://my.csdn.net/uploads/201204/04/1333528658_9163.gif">
 <meta property="og:updated_time" content="2016-07-06T14:37:17.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式----装饰者模式">
-<meta name="twitter:description" content="设计模式系列，资料来源：史上最全设计模式导学目录（完整版），文章写得非常详细。站在巨人的肩膀上，这里是对于每一篇的摘录，算是作为自己对这方面知识的学习记录。
-概述装饰模式可以在不改变一个对象本身功能的基础上给对象增加额外的新行为，在现实生活中，这种情况也到处存在，例如一张照片，我们可以不改变照片本身，给它增加一个相框，使得它具有防潮的功能，而且用户可以根据需要给它增加不同类型的相框，甚至可以在一个">
+<meta name="twitter:description" content="设计模式系列，资料来源：史上最全设计模式导学目录（完整版），文章写得非常详细。站在巨人的肩膀上，这里是对于每一篇的摘录，算是作为自己对这方面知识的学习记录。 概述装饰模式可以在不改变一个对象本身功能的基础上给对象增加额外的新行为，在现实生活中，这种情况也到处存在，例如一张照片，我们可以不改变照片本身，给它增加一个相框，使得它具有防潮的功能，而且用户可以根据需要给它增加不同类型的相框，甚至可以在一个">
 <meta name="twitter:image" content="http://my.csdn.net/uploads/201204/04/1333528185_7832.gif">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> 设计模式----装饰者模式 | Ronrwin </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <link rel="canonical" href="http://yoursite.com/2016/07/06/study/design_pattern/decorator-pattern/"/>
+
+
+
+
+
+  <title>设计模式----装饰者模式 | Ronrwin</title>
   
+
+
 
 
 
@@ -126,7 +140,7 @@
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?edbf159d8024df632c036adb8b42f0a9";
+      hm.src = "https://hm.baidu.com/hm.js?edbf159d8024df632c036adb8b42f0a9";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -135,38 +149,42 @@
 
 
 
+</head>
 
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Ronrwin</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ronrwin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -179,17 +197,27 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -197,21 +225,11 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
-            
-            标签
           </a>
         </li>
       
@@ -222,6 +240,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -236,49 +256,68 @@
     
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/06/study/design_pattern/decorator-pattern/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ronrwin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ronrwin">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                设计模式----装饰者模式
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">设计模式----装饰者模式</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-06T21:15:36+08:00" content="2016-07-06">
-              2016-07-06
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-06T21:15:36+08:00">
+                2016-07-06
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/开发/" itemprop="url" rel="index">
                     <span itemprop="name">开发</span>
                   </a>
@@ -286,49 +325,48 @@
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/06/study/design_pattern/decorator-pattern/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/06/study/design_pattern/decorator-pattern/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
           
 
           
           
              <span id="/2016/07/06/study/design_pattern/decorator-pattern/" class="leancloud_visitors" data-flag-title="设计模式----装饰者模式">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <p>设计模式系列，资料来源：<a href="http://blog.csdn.net/lovelion/article/details/17517213" target="_blank" rel="external">史上最全设计模式导学目录（完整版）</a>，文章写得非常详细。<br>站在巨人的肩膀上，这里是对于每一篇的摘录，算是作为自己对这方面知识的学习记录。</p>
+        <p>设计模式系列，资料来源：<a href="http://blog.csdn.net/lovelion/article/details/17517213" target="_blank" rel="noopener">史上最全设计模式导学目录（完整版）</a>，文章写得非常详细。<br>站在巨人的肩膀上，这里是对于每一篇的摘录，算是作为自己对这方面知识的学习记录。</p>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>装饰模式可以在不改变一个对象本身功能的基础上给对象增加额外的新行为，在现实生活中，这种情况也到处存在，例如一张照片，我们可以不改变照片本身，给它增加一个相框，使得它具有防潮的功能，而且用户可以根据需要给它增加不同类型的相框，甚至可以在一个小相框的外面再套一个大相框。</p>
 <p>装饰模式(Decorator Pattern)：动态地给一个对象增加一些额外的职责，就增加对象功能来说，装饰模式比生成子类实现更为灵活。装饰模式是一种对象结构型模式。<br><img src="http://my.csdn.net/uploads/201204/04/1333528185_7832.gif" alt="" title="装饰模式结构图"></p>
 <p>在装饰模式结构图中包含如下几个角色：</p>
@@ -340,9 +378,9 @@
 </ul>
 <p>由于具体构件类和装饰类都实现了相同的抽象构件接口，因此装饰模式以对客户透明的方式动态地给一个对象附加上更多的责任，换言之，客户端并不会觉得对象在装饰前和装饰后有什么不同。装饰模式可以在不需要创造更多子类的情况下，将对象的功能加以扩展。</p>
 <a id="more"></a>
-<p>装饰模式的核心在于抽象装饰类的设计，其典型代码如下所示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span> <span class="keyword">implements</span> <span class="title">Component</span></span><br><span class="line"></span>&#123;</span><br><span class="line">       <span class="keyword">private</span> Component component;  <span class="comment">//维持一个对抽象构件对象的引用</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="title">Decorator</span><span class="params">(Component component)</span>  <span class="comment">//注入一个抽象构件类型的对象</span></span><br><span class="line">       </span>&#123;</span><br><span class="line">              <span class="keyword">this</span>.component=component;</span><br><span class="line">       &#125;</span><br><span class="line"> </span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span></span><br><span class="line">       </span>&#123;</span><br><span class="line">              component.operation();  <span class="comment">//调用原有业务方法</span></span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>装饰模式的核心在于抽象装饰类的设计，其典型代码如下所示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span> <span class="keyword">implements</span> <span class="title">Component</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">       <span class="keyword">private</span> Component component;  <span class="comment">//维持一个对抽象构件对象的引用</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="title">Decorator</span><span class="params">(Component component)</span>  <span class="comment">//注入一个抽象构件类型的对象</span></span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line">              <span class="keyword">this</span>.component=component;</span><br><span class="line">       &#125;</span><br><span class="line"> </span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span></span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line">              component.operation();  <span class="comment">//调用原有业务方法</span></span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在抽象装饰类Decorator中定义了一个Component类型的对象component，维持一个对抽象构件对象的引用，并可以通过构造方法或Setter方法将一个Component类型的对象注入进来，同时由于Decorator类实现了抽象构件Component接口，因此需要实现在其中声明的业务方法operation()，需要注意的是在Decorator中并未真正实现operation()方法，而只是调用原有component对象的operation()方法，它没有真正实施装饰，而是提供一个统一的接口，将具体装饰过程交给子类完成。</p>
-<p>在Decorator的子类即具体装饰类中将继承operation()方法并根据需要进行扩展，典型的具体装饰类代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteDecorator</span> <span class="keyword">extends</span> <span class="title">Decorator</span></span><br><span class="line"></span>&#123;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="title">ConcreteDecorator</span><span class="params">(Component  component)</span></span><br><span class="line">       </span>&#123;</span><br><span class="line">              <span class="keyword">super</span>(component);</span><br><span class="line">       &#125;</span><br><span class="line"> </span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span></span><br><span class="line">       </span>&#123;</span><br><span class="line">              <span class="keyword">super</span>.operation();  <span class="comment">//调用原有业务方法</span></span><br><span class="line">              addedBehavior();  <span class="comment">//调用新增业务方法</span></span><br><span class="line">       &#125;</span><br><span class="line"> </span><br><span class="line">     <span class="comment">//新增业务方法</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">addedBehavior</span><span class="params">()</span></span><br><span class="line">       </span>&#123;    </span><br><span class="line">         ……</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在Decorator的子类即具体装饰类中将继承operation()方法并根据需要进行扩展，典型的具体装饰类代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteDecorator</span> <span class="keyword">extends</span> <span class="title">Decorator</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="title">ConcreteDecorator</span><span class="params">(Component  component)</span></span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line">              <span class="keyword">super</span>(component);</span><br><span class="line">       &#125;</span><br><span class="line"> </span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span></span></span><br><span class="line"><span class="function">       </span>&#123;</span><br><span class="line">              <span class="keyword">super</span>.operation();  <span class="comment">//调用原有业务方法</span></span><br><span class="line">              addedBehavior();  <span class="comment">//调用新增业务方法</span></span><br><span class="line">       &#125;</span><br><span class="line"> </span><br><span class="line">     <span class="comment">//新增业务方法</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">addedBehavior</span><span class="params">()</span></span></span><br><span class="line"><span class="function">       </span>&#123;    </span><br><span class="line">         ……</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="装饰模式注意事项"><a href="#装饰模式注意事项" class="headerlink" title="装饰模式注意事项"></a>装饰模式注意事项</h2><ol>
 <li>尽量保持装饰类的接口与被装饰类的接口相同，这样，对于客户端而言，无论是装饰之前的对象还是装饰之后的对象都可以一致对待。</li>
 <li>尽量保持具体构件类ConcreteComponent是一个“轻”类，也就是说不要把太多的行为放在具体构件类中，我们可以通过装饰类对其进行扩展。</li>
@@ -368,25 +406,26 @@
       
     </div>
     
-    <div>
-      
-        
-      
-    </div>
+    
+    
 
-    <div>
-      
-        
-      
-    </div>
+    
+
+    
+
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/设计模式/" rel="tag">#设计模式</a>
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
           
         </div>
+      
+
+      
+      
       
 
       
@@ -398,6 +437,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -412,6 +453,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -427,16 +472,9 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
+
+  
+
 
 
         </div>
@@ -452,82 +490,104 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
             站点概览
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="Ronrwin" />
-          <p class="site-author-name" itemprop="name">Ronrwin</p>
-          <p class="site-description motion-element" itemprop="description">我要一步一步往上爬</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">36</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Ronrwin" />
+            
+              <p class="site-author-name" itemprop="name">Ronrwin</p>
+              <p class="site-description motion-element" itemprop="description">我要一步一步往上爬</p>
           </div>
 
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
 
           
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">14</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
+
+          
           
 
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
           
+          
+
+          
+
         </div>
-
-        
-        
-
-        
-        
-
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰模式注意事项"><span class="nav-number">2.</span> <span class="nav-text">装饰模式注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰模式总结"><span class="nav-number">3.</span> <span class="nav-text">装饰模式总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主要优点"><span class="nav-number">3.1.</span> <span class="nav-text">主要优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要缺点"><span class="nav-number">3.2.</span> <span class="nav-text">主要缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景"><span class="nav-number">3.3.</span> <span class="nav-text">适用场景</span></a></li></ol></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -540,36 +600,50 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Ronrwin</span>
+
+  
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
 
         
+
+
+
+
+
+
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
   </div>
 
   
@@ -592,87 +666,106 @@
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
 
 
 
   
   
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
-
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
 
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
 
 
   
 
 
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
 
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'ronrwin';
-      var disqus_identifier = '2016/07/06/study/design_pattern/decorator-pattern/';
-      var disqus_title = '设计模式----装饰者模式';
-      var disqus_url = 'http://yoursite.com/2016/07/06/study/design_pattern/decorator-pattern/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
-  
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
 
   
   
+
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
 
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
   <script>AV.initialize("rJY7oU2yC0X7rpMkDVpgbLMk-gzGzoHsz", "5D09GTCHztyL5uOTrN73c9Dt");</script>
   <script>
     function showTime(Counter) {
@@ -701,6 +794,14 @@
             var element = document.getElementById(url);
 
             $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
           }
         })
         .fail(function (object, error) {
@@ -732,6 +833,12 @@
             });
           } else {
             var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
             newcounter.set("title", title);
             newcounter.set("url", url);
             newcounter.set("time", 1);
@@ -763,6 +870,17 @@
   </script>
 
 
+
+  
+
+  
+
+  
+  
+
+  
+
+  
 
   
 

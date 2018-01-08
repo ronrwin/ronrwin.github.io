@@ -1,15 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
@@ -27,41 +34,38 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
   
   
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
 
 
   <meta name="keywords" content="Markdown," />
@@ -73,19 +77,16 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
-
-
-
-
 
 
 <meta name="description" content="这篇文章是使用hexo写文章会用到的基本语法，记录下来学习过程中自己遇到的问题，也让读者们少走弯路。">
+<meta name="keywords" content="Markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown 常用指令">
 <meta property="og:url" content="http://yoursite.com/2016/04/25/hexo/markdownsample/index.html">
 <meta property="og:site_name" content="Ronrwin">
 <meta property="og:description" content="这篇文章是使用hexo写文章会用到的基本语法，记录下来学习过程中自己遇到的问题，也让读者们少走弯路。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.0739i.com.cn/data/attachment/portal/201603/09/120158ksjocrjsoohrmhtg.jpg">
 <meta property="og:updated_time" content="2016-04-27T02:01:26.504Z">
 <meta name="twitter:card" content="summary">
@@ -95,26 +96,42 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
-  <title> Markdown 常用指令 | Ronrwin </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <link rel="canonical" href="http://yoursite.com/2016/04/25/hexo/markdownsample/"/>
+
+
+
+
+
+  <title>Markdown 常用指令 | Ronrwin</title>
   
+
+
 
 
 
@@ -122,7 +139,7 @@
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?edbf159d8024df632c036adb8b42f0a9";
+      hm.src = "https://hm.baidu.com/hm.js?edbf159d8024df632c036adb8b42f0a9";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -131,38 +148,42 @@
 
 
 
+</head>
 
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Ronrwin</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ronrwin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -175,17 +196,27 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -193,21 +224,11 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
-            
-            标签
           </a>
         </li>
       
@@ -218,6 +239,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -232,49 +255,68 @@
     
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/25/hexo/markdownsample/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ronrwin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ronrwin">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                Markdown 常用指令
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">Markdown 常用指令</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-25T21:50:22+08:00" content="2016-04-25">
-              2016-04-25
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-25T21:50:22+08:00">
+                2016-04-25
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Hexo/" itemprop="url" rel="index">
                     <span itemprop="name">Hexo</span>
                   </a>
@@ -282,42 +324,45 @@
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/25/hexo/markdownsample/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/25/hexo/markdownsample/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
           
 
           
           
              <span id="/2016/04/25/hexo/markdownsample/" class="leancloud_visitors" data-flag-title="Markdown 常用指令">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
+
+          
+
+          
+              <div class="post-description">
+                  这篇文章是使用hexo写文章会用到的基本语法，记录下来学习过程中自己遇到的问题，也让读者们少走弯路。
+              </div>
+          
+
         </div>
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -382,8 +427,8 @@
 </ul>
 <hr>
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[Ronrwin](http://ronrwin.github.io/)</span><br><span class="line"></span><br><span class="line">[Ronrwin][a]</span><br><span class="line">[a]: http://ronrwin.github.io/</span><br><span class="line"></span><br><span class="line">[Google][]</span><br><span class="line">[google]: http://google.com</span><br></pre></td></tr></table></figure>
-<p><a href="http://ronrwin.github.io/" target="_blank" rel="external">Ronrwin</a><br><a href="http://ronrwin.github.io/" target="_blank" rel="external">Ronrwin</a></p>
-<p><a href="http://google.com" target="_blank" rel="external">Google</a></p>
+<p><a href="http://ronrwin.github.io/" target="_blank" rel="noopener">Ronrwin</a><br><a href="http://ronrwin.github.io/" target="_blank" rel="noopener">Ronrwin</a></p>
+<p><a href="http://google.com" target="_blank" rel="noopener">Google</a></p>
 <hr>
 <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>Markdown语法：![描述]（图片链接地址）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![替代文字](http://www.0739i.com.cn/data/attachment/portal/201603/09/120158ksjocrjsoohrmhtg.jpg &quot;这是图片标题&quot;)</span><br></pre></td></tr></table></figure></p>
 <p><img src="http://www.0739i.com.cn/data/attachment/portal/201603/09/120158ksjocrjsoohrmhtg.jpg" alt="替代文字" title="这是图片标题"></p>
@@ -441,41 +486,40 @@
 <h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[回到标题](#标题)</span><br></pre></td></tr></table></figure>
 <p><a href="#标题">回到标题</a></p>
 <hr>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://help.github.com/enterprise/2.1/user/articles/basic-writing-and-formatting-syntax/" target="_blank" rel="external">Basic writing and formatting syntax</a><br><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown 语法说明 (简体中文版)</a></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://help.github.com/enterprise/2.1/user/articles/basic-writing-and-formatting-syntax/" target="_blank" rel="noopener">Basic writing and formatting syntax</a><br><a href="http://wowubuntu.com/markdown/" target="_blank" rel="noopener">Markdown 语法说明 (简体中文版)</a></p>
 
       
     </div>
     
-    <div>
-      
-        
-      
-    </div>
+    
+    
 
-    <div>
-      
-        
-      
-    </div>
+    
+
+    
+
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
+            <a href="/tags/Markdown/" rel="tag"># Markdown</a>
           
         </div>
+      
+
+      
+      
       
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/18/Android/translate/permission/" rel="next" title="权限篇（1）----使用系统权限">
-                <i class="fa fa-chevron-left"></i> 权限篇（1）----使用系统权限
-              </a>
-            
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -490,6 +534,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -505,16 +553,9 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
+
+  
+
 
 
         </div>
@@ -530,82 +571,104 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
             站点概览
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="Ronrwin" />
-          <p class="site-author-name" itemprop="name">Ronrwin</p>
-          <p class="site-description motion-element" itemprop="description">我要一步一步往上爬</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">36</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Ronrwin" />
+            
+              <p class="site-author-name" itemprop="name">Ronrwin</p>
+              <p class="site-description motion-element" itemprop="description">我要一步一步往上爬</p>
           </div>
 
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">8</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
 
           
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">14</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
+
+          
           
 
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
           
+          
+
+          
+
         </div>
-
-        
-        
-
-        
-        
-
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标题"><span class="nav-number">1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#斜体、加粗、删除线、下划线"><span class="nav-number">2.</span> <span class="nav-text">斜体、加粗、删除线、下划线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阅读全文"><span class="nav-number">3.</span> <span class="nav-text">阅读全文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分割线"><span class="nav-number">4.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">5.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大小标题"><span class="nav-number">6.</span> <span class="nav-text">大小标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有序列表"><span class="nav-number">7.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无序列表"><span class="nav-number">8.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">9.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片"><span class="nav-number">10.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标记"><span class="nav-number">11.</span> <span class="nav-text">标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码块"><span class="nav-number">12.</span> <span class="nav-text">代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">13.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格靠左、居中、靠右"><span class="nav-number">14.</span> <span class="nav-text">表格靠左、居中、靠右</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反斜杠"><span class="nav-number">15.</span> <span class="nav-text">反斜杠</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锚点"><span class="nav-number">16.</span> <span class="nav-text">锚点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">17.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -618,36 +681,50 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Ronrwin</span>
+
+  
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
 
         
+
+
+
+
+
+
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
   </div>
 
   
@@ -670,87 +747,106 @@
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
 
 
 
   
   
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
-
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
 
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
 
 
   
 
 
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
 
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'ronrwin';
-      var disqus_identifier = '2016/04/25/hexo/markdownsample/';
-      var disqus_title = 'Markdown 常用指令';
-      var disqus_url = 'http://yoursite.com/2016/04/25/hexo/markdownsample/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
-  
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
 
   
   
+
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
 
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
   <script>AV.initialize("rJY7oU2yC0X7rpMkDVpgbLMk-gzGzoHsz", "5D09GTCHztyL5uOTrN73c9Dt");</script>
   <script>
     function showTime(Counter) {
@@ -779,6 +875,14 @@
             var element = document.getElementById(url);
 
             $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
           }
         })
         .fail(function (object, error) {
@@ -810,6 +914,12 @@
             });
           } else {
             var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
             newcounter.set("title", title);
             newcounter.set("url", url);
             newcounter.set("time", 1);
@@ -841,6 +951,17 @@
   </script>
 
 
+
+  
+
+  
+
+  
+  
+
+  
+
+  
 
   
 
