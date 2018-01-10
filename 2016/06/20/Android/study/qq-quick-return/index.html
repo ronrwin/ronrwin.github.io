@@ -87,13 +87,13 @@
 <meta property="og:site_name" content="Ronrwin">
 <meta property="og:description" content="在现在版本手Q的功能当中，可以提供在锁屏时直接回复的功能。如图所示QQ实现了在收到消息的时候，自动把屏幕置亮，并提供快捷回复的操作。那么，我们就研究下该功能是如何实现的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/image/qq_quickreturn/qq_quickreturn1.png">
-<meta property="og:image" content="http://yoursite.com/image/qq_quickreturn/qq_quickreturn2.png">
-<meta property="og:updated_time" content="2016-06-20T15:03:15.344Z">
+<meta property="og:image" content="http://p2c4v30x4.bkt.clouddn.com/qq_quickreturn1.png">
+<meta property="og:image" content="http://p2c4v30x4.bkt.clouddn.com/qq_quickreturn2.png">
+<meta property="og:updated_time" content="2018-01-10T14:04:48.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="仿QQ手机锁屏回复功能">
 <meta name="twitter:description" content="在现在版本手Q的功能当中，可以提供在锁屏时直接回复的功能。如图所示QQ实现了在收到消息的时候，自动把屏幕置亮，并提供快捷回复的操作。那么，我们就研究下该功能是如何实现的。">
-<meta name="twitter:image" content="http://yoursite.com/image/qq_quickreturn/qq_quickreturn1.png">
+<meta name="twitter:image" content="http://p2c4v30x4.bkt.clouddn.com/qq_quickreturn1.png">
 
 
 
@@ -269,7 +269,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/20/Android/study/qq-quick-return/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ronrwin">
+      <meta itemprop="name" content="曾繁荣">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
@@ -296,7 +296,7 @@
                 <span class="post-meta-item-text">发表于</span>
               
               <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-20T22:53:30+08:00">
-                2016-06-20
+                yyyy-06-Mo
               </time>
             
 
@@ -377,7 +377,7 @@
       
 
       
-        <p>在现在版本手Q的功能当中，可以提供在锁屏时直接回复的功能。如图所示<br><img src="/image/qq_quickreturn/qq_quickreturn1.png" alt=""><br>QQ实现了在收到消息的时候，自动把屏幕置亮，并提供快捷回复的操作。<br>那么，我们就研究下该功能是如何实现的。</p>
+        <p>在现在版本手Q的功能当中，可以提供在锁屏时直接回复的功能。如图所示<br><img src="http://p2c4v30x4.bkt.clouddn.com/qq_quickreturn1.png" alt=""><br>QQ实现了在收到消息的时候，自动把屏幕置亮，并提供快捷回复的操作。<br>那么，我们就研究下该功能是如何实现的。</p>
 <a id="more"></a>
 <h2 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h2><p>要产生这种场景，其原理就是在屏幕显示一个弹窗样式的Activity，同时置亮屏幕。当关闭时，自动跳过解锁步骤。<br>假设我们要显示DialogActivity，把目标Activity设为<code>__Wallpaper__</code>样式（确保锁屏时能置顶显示）：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".DialogActivity"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:theme</span>=<span class="string">"@android:style/Theme.Wallpaper.NoTitleBar"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>在弹框的时机，使用Intent跳转页面，需要添加<code>Intent.FLAG_ACTIVITY_NEW_TASK</code>标记<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Intent i = <span class="keyword">new</span> Intent(mContext, DialogActivity.class);</span><br><span class="line">i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</span><br><span class="line">startActivity(i);</span><br></pre></td></tr></table></figure></p>
@@ -389,7 +389,7 @@
 <h2 id="Demo实现：（minSdkVersion-5）"><a href="#Demo实现：（minSdkVersion-5）" class="headerlink" title="Demo实现：（minSdkVersion : 5）"></a>Demo实现：（minSdkVersion : 5）</h2><p>Manifest配置文件：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".DialogActivity"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:theme</span>=<span class="string">"@android:style/Theme.Wallpaper.NoTitleBar"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>MainActivity.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.activity_main);</span><br><span class="line">    mContext = <span class="keyword">this</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 延时操作。10秒后弹框</span></span><br><span class="line">    <span class="keyword">new</span> Handler(<span class="keyword">new</span> Handler.Callback() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</span><br><span class="line">            Intent i = <span class="keyword">new</span> Intent(mContext, DialogActivity.class);</span><br><span class="line">            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</span><br><span class="line">            startActivity(i);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;).sendEmptyMessageDelayed(<span class="number">0</span>, <span class="number">10000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>DialogActivity.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">    getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED</span><br><span class="line">            | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON</span><br><span class="line">            | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);</span><br><span class="line">    setContentView(R.layout.activity_dialog);</span><br><span class="line">    mText = (TextView) findViewById(R.id.test);</span><br><span class="line"> </span><br><span class="line">    String devicename = android.os.Build.MODEL;</span><br><span class="line">    String brand = android.os.Build.BRAND;</span><br><span class="line">    <span class="keyword">int</span> version = Build.VERSION.SDK_INT;</span><br><span class="line"> </span><br><span class="line">    String logText = <span class="string">"devicename: "</span> + devicename + <span class="string">"; api levvel: "</span> + version + <span class="string">"; brand: "</span> + brand;</span><br><span class="line">    Log.d(<span class="string">"test"</span>, logText);</span><br><span class="line">    mText.setText(logText);</span><br><span class="line"> </span><br><span class="line">    mText.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">            finish();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>demo执行后可关闭屏幕，10秒后便会弹出目标界面。<br><img src="/image/qq_quickreturn/qq_quickreturn2.png" alt=""></p>
+<p>demo执行后可关闭屏幕，10秒后便会弹出目标界面。<br><img src="http://p2c4v30x4.bkt.clouddn.com/qq_quickreturn2.png" alt=""></p>
 
       
     </div>
@@ -510,9 +510,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/avatar.jpg"
-                alt="Ronrwin" />
+                alt="曾繁荣" />
             
-              <p class="site-author-name" itemprop="name">Ronrwin</p>
+              <p class="site-author-name" itemprop="name">曾繁荣</p>
               <p class="site-description motion-element" itemprop="description">我要一步一步往上爬</p>
           </div>
 
@@ -523,7 +523,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -545,7 +545,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -602,7 +602,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Ronrwin</span>
+  <span class="author" itemprop="copyrightHolder">曾繁荣</span>
 
   
 </div>

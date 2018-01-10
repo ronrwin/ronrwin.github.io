@@ -87,16 +87,16 @@
 <meta property="og:site_name" content="Ronrwin">
 <meta property="og:description" content="设备管理器？Android 2.2 介绍了通过提供设备管理器来支持企业级应用的开发。设备管理器API提供了系统级别的一些功能，允许企业使用一些安全敏感的应用来开发更多内部的应用。官方介绍：https://developer.android.com/guide/topics/admin/device-admin.html#overview 示例首先，我们需要在配置文件中声明一个DeviceAdmin">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/image/DevicePolicyManager/1.png">
-<meta property="og:image" content="http://yoursite.com/image/DevicePolicyManager/2.png">
-<meta property="og:image" content="http://yoursite.com/image/DevicePolicyManager/3.png">
-<meta property="og:image" content="http://yoursite.com/image/DevicePolicyManager/4.png">
-<meta property="og:image" content="http://yoursite.com/image/DevicePolicyManager/5.png">
-<meta property="og:updated_time" content="2016-06-15T14:01:15.462Z">
+<meta property="og:image" content="http://p2c4v30x4.bkt.clouddn.com/DevicePolicyManager/1.png">
+<meta property="og:image" content="http://p2c4v30x4.bkt.clouddn.com/DevicePolicyManager/2.png">
+<meta property="og:image" content="http://p2c4v30x4.bkt.clouddn.com/DevicePolicyManager/3.png">
+<meta property="og:image" content="http://p2c4v30x4.bkt.clouddn.com/DevicePolicyManager/4.png">
+<meta property="og:image" content="http://p2c4v30x4.bkt.clouddn.com/DevicePolicyManager/5.png">
+<meta property="og:updated_time" content="2018-01-10T10:56:30.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DevicePolicyManager防卸载">
 <meta name="twitter:description" content="设备管理器？Android 2.2 介绍了通过提供设备管理器来支持企业级应用的开发。设备管理器API提供了系统级别的一些功能，允许企业使用一些安全敏感的应用来开发更多内部的应用。官方介绍：https://developer.android.com/guide/topics/admin/device-admin.html#overview 示例首先，我们需要在配置文件中声明一个DeviceAdmin">
-<meta name="twitter:image" content="http://yoursite.com/image/DevicePolicyManager/1.png">
+<meta name="twitter:image" content="http://p2c4v30x4.bkt.clouddn.com/DevicePolicyManager/1.png">
 
 
 
@@ -272,7 +272,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/15/Android/study/device-policy-manager/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ronrwin">
+      <meta itemprop="name" content="曾繁荣">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
@@ -299,7 +299,7 @@
                 <span class="post-meta-item-text">发表于</span>
               
               <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-15T21:25:16+08:00">
-                2016-06-15
+                yyyy-06-We
               </time>
             
 
@@ -393,10 +393,10 @@
 <p>在自定义的Receiver中可以通过监听用户操作来添加我们需要的处理逻辑。</p>
 <p>最后，在启动页中引导用户跳转到激活页面：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.activity_what_the_hell);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 获取设备管理器</span></span><br><span class="line">    DevicePolicyManager devicePolicyManager = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);</span><br><span class="line">    <span class="comment">// 指定授权对象，设置为我们的Receiver</span></span><br><span class="line">    ComponentName deviceComponentName = <span class="keyword">new</span> ComponentName(<span class="string">"com.uc.ronrwin.devicepolicymanager"</span>,</span><br><span class="line">            <span class="string">"com.uc.ronrwin.devicepolicymanager.MyDeviceReceiver"</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 判断是否已授权</span></span><br><span class="line">    <span class="keyword">boolean</span> isAdminActivie = devicePolicyManager.isAdminActive(deviceComponentName);</span><br><span class="line">    <span class="keyword">if</span> (!isAdminActivie) &#123;</span><br><span class="line">        Intent intent = <span class="keyword">new</span> Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);</span><br><span class="line">        intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, deviceComponentName);</span><br><span class="line">        intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION,</span><br><span class="line">                <span class="string">"（自定义区域2）"</span>);</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这样我们的demo就完成了。</p>
-<p>启动时关于属性的描述：<br><img src="/image/DevicePolicyManager/1.png" alt=""></p>
-<p>当激活之后，该应用将不能被操作：<br><img src="/image/DevicePolicyManager/2.png" alt=""></p>
-<p>如果一定要卸载，则需要到”Security”-&gt;”Device administrators”中取消激活：<br><img src="/image/DevicePolicyManager/3.png" alt=""><br><img src="/image/DevicePolicyManager/4.png" alt=""></p>
-<p>如果点击“DEACTIVATE”，则会出现我们之前定义的弹框内容：<br><img src="/image/DevicePolicyManager/5.png" alt=""><br>点击OK之后，该应用就可以卸载了。</p>
+<p>启动时关于属性的描述：<br><img src="http://p2c4v30x4.bkt.clouddn.com/DevicePolicyManager/1.png" alt=""></p>
+<p>当激活之后，该应用将不能被操作：<br><img src="http://p2c4v30x4.bkt.clouddn.com/DevicePolicyManager/2.png" alt=""></p>
+<p>如果一定要卸载，则需要到”Security”-&gt;”Device administrators”中取消激活：<br><img src="http://p2c4v30x4.bkt.clouddn.com/DevicePolicyManager/3.png" alt=""><br><img src="http://p2c4v30x4.bkt.clouddn.com/DevicePolicyManager/4.png" alt=""></p>
+<p>如果点击“DEACTIVATE”，则会出现我们之前定义的弹框内容：<br><img src="http://p2c4v30x4.bkt.clouddn.com/DevicePolicyManager/5.png" alt=""><br>点击OK之后，该应用就可以卸载了。</p>
 <h2 id="设备策略"><a href="#设备策略" class="headerlink" title="设备策略"></a>设备策略</h2><p>我们通过下面的方式获取DevicePolicyManager对象：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DevicePolicyManager mDPM =</span><br><span class="line">    (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);</span><br></pre></td></tr></table></figure></p>
 <p>以前一篇文章所述，我们还是原来的demo定义：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 指定授权对象，设置为我们的Receiver</span></span><br><span class="line">ComponentName deviceComponentName = <span class="keyword">new</span> ComponentName(<span class="string">"com.uc.ronrwin.devicepolicymanager"</span>,</span><br><span class="line">        <span class="string">"com.uc.ronrwin.devicepolicymanager.MyDeviceReceiver"</span>);</span><br></pre></td></tr></table></figure></p>
 <h4 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h4><p>下面的代码提示用户设置密码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(DevicePolicyManager.ACTION_SET_NEW_PASSWORD);</span><br><span class="line">mDPM.setPasswordQuality(deviceComponentName, DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED);</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure></p>
@@ -551,9 +551,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/avatar.jpg"
-                alt="Ronrwin" />
+                alt="曾繁荣" />
             
-              <p class="site-author-name" itemprop="name">Ronrwin</p>
+              <p class="site-author-name" itemprop="name">曾繁荣</p>
               <p class="site-description motion-element" itemprop="description">我要一步一步往上爬</p>
           </div>
 
@@ -564,7 +564,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -586,7 +586,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -643,7 +643,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Ronrwin</span>
+  <span class="author" itemprop="copyrightHolder">曾繁荣</span>
 
   
 </div>

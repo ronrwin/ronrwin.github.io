@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Ronrwin">
 <meta property="og:description" content="项目github地址：OkHttp官方简介：OkHttp是一款优秀的HTTP框架，它支持get请求和post请求，支持基于Http的文件上传和下载，支持加载图片，支持下载文件透明的GZIP压缩，支持响应缓存避免重复的网络请求，支持使用连接池来降低响应延迟问题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/image/okhttp/okhttp_interceptors.png">
-<meta property="og:updated_time" content="2016-06-18T09:32:07.460Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/mxn21/mxn21.github.io/master/public/img/img99.png">
+<meta property="og:updated_time" content="2018-01-10T10:58:23.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于okhttp">
 <meta name="twitter:description" content="项目github地址：OkHttp官方简介：OkHttp是一款优秀的HTTP框架，它支持get请求和post请求，支持基于Http的文件上传和下载，支持加载图片，支持下载文件透明的GZIP压缩，支持响应缓存避免重复的网络请求，支持使用连接池来降低响应延迟问题。">
-<meta name="twitter:image" content="http://yoursite.com/image/okhttp/okhttp_interceptors.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/mxn21/mxn21.github.io/master/public/img/img99.png">
 
 
 
@@ -268,7 +268,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/09/study/okhttp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ronrwin">
+      <meta itemprop="name" content="曾繁荣">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
@@ -295,7 +295,7 @@
                 <span class="post-meta-item-text">发表于</span>
               
               <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-09T14:39:58+08:00">
-                2016-06-09
+                yyyy-06-Th
               </time>
             
 
@@ -409,7 +409,7 @@
 <p>也可以在超过应用规定的重试次数后取消：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (responseCount(response) &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>; <span class="comment">// If we've failed 3 times, give up.</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
 <p>以上代码依赖<code>responseCount()</code>方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">responseCount</span><span class="params">(Response response)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> ((response = response.priorResponse()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">      result++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h2><p>观察，修改以及可能短路的请求输出和响应请求的回来。通常情况下拦截器用来添加，移除或者转换请求或者回应的头部信息。 拦截器接口中有intercept(Chain chain)方法，同时返回Response。看一个简单的例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoggingInterceptor</span> <span class="keyword">implements</span> <span class="title">Interceptor</span> </span>&#123;</span><br><span class="line">  <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> Response <span class="title">intercept</span><span class="params">(Interceptor.Chain chain)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    Request request = chain.request();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">long</span> t1 = System.nanoTime();</span><br><span class="line">    logger.info(String.format(<span class="string">"Sending request %s on %s%n%s"</span>,</span><br><span class="line">        request.url(), chain.connection(), request.headers()));</span><br><span class="line"></span><br><span class="line">    Response response = chain.proceed(request);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">long</span> t2 = System.nanoTime();</span><br><span class="line">    logger.info(String.format(<span class="string">"Received response for %s in %.1fms%n%s"</span>,</span><br><span class="line">        response.request().url(), (t2 - t1) / <span class="number">1e6</span>d, response.headers()));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> response;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>chain.proceed(request)是拦截器的关键部分。这个看似简单的方法是所有的HTTP工作发生的地方，产生满足要求的反应。 拦截器可以链接。假设你有一个压缩的拦截和校验拦截器：你需要决定数据是否被压缩，或者校验或校验然后压缩。okhttp使用列表来跟踪和拦截，拦截器会按顺序调用。<br><img src="/image/okhttp/okhttp_interceptors.png" alt="拦截器"></p>
+<p>chain.proceed(request)是拦截器的关键部分。这个看似简单的方法是所有的HTTP工作发生的地方，产生满足要求的反应。 拦截器可以链接。假设你有一个压缩的拦截和校验拦截器：你需要决定数据是否被压缩，或者校验或校验然后压缩。okhttp使用列表来跟踪和拦截，拦截器会按顺序调用。<br><img src="https://raw.githubusercontent.com/mxn21/mxn21.github.io/master/public/img/img99.png" alt="拦截器"></p>
 <h4 id="Application-Interceptors"><a href="#Application-Interceptors" class="headerlink" title="Application Interceptors"></a>Application Interceptors</h4><p>拦截器可以注册为应用程序或网络拦截。我们将使用上面定义的logginginterceptor说明差异。 可以在OkHttpClient.interceptors()返回的list中调用add(),来注册一个application interceptor 。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">OkHttpClient client = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line">client.interceptors().add(<span class="keyword">new</span> LoggingInterceptor());</span><br><span class="line">Request request = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">    .url(<span class="string">"http://www.publicobject.com/helloworld.txt"</span>)</span><br><span class="line">    .header(<span class="string">"User-Agent"</span>, <span class="string">"OkHttp Example"</span>)</span><br><span class="line">    .build();</span><br><span class="line">Response response = client.newCall(request).execute();</span><br><span class="line">response.body().close();</span><br></pre></td></tr></table></figure></p>
 <p>URL <a href="http://www.publicobject.com/helloworld.txt会重定向到https://publicobject.com/helloworld" target="_blank" rel="noopener">http://www.publicobject.com/helloworld.txt会重定向到https://publicobject.com/helloworld</a> .txt，OkHttp会自动执行这些重定向。application interceptor执行之后，chain.proceed()返回的response会重定向到 下面的response：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">INFO: Sending request http:<span class="comment">//www.publicobject.com/helloworld.txt on null</span></span><br><span class="line">User-Agent: OkHttp Example</span><br><span class="line">INFO: Received response <span class="keyword">for</span> https:<span class="comment">//publicobject.com/helloworld.txt in 1179.7ms</span></span><br><span class="line">Server: nginx/<span class="number">1.4</span>.6 (Ubuntu)</span><br><span class="line">Content-Type: text/plain</span><br><span class="line">Content-Length: <span class="number">1759</span></span><br><span class="line">Connection: keep-alive</span><br></pre></td></tr></table></figure></p>
 <p>可以看到，url重定向来，因为response.request().url()和request.url()不同，两个不同的日志可以看出这一点。</p>
@@ -567,9 +567,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/avatar.jpg"
-                alt="Ronrwin" />
+                alt="曾繁荣" />
             
-              <p class="site-author-name" itemprop="name">Ronrwin</p>
+              <p class="site-author-name" itemprop="name">曾繁荣</p>
               <p class="site-description motion-element" itemprop="description">我要一步一步往上爬</p>
           </div>
 
@@ -580,7 +580,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -602,7 +602,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -659,7 +659,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Ronrwin</span>
+  <span class="author" itemprop="copyrightHolder">曾繁荣</span>
 
   
 </div>
