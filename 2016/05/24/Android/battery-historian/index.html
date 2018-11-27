@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="性能," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="battery-historian是谷歌推荐使用的电量检测工具，我们看下应该如何使用">
+<meta name="keywords" content="性能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电量监控----battery-historian">
+<meta property="og:url" content="http://yoursite.com/2016/05/24/Android/battery-historian/index.html">
+<meta property="og:site_name" content="Ronrwin">
+<meta property="og:description" content="battery-historian是谷歌推荐使用的电量检测工具，我们看下应该如何使用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/battery-historian/battery-historian-local.png">
+<meta property="og:image" content="http://yoursite.com/images/battery-historian/battery-historian-web1.png">
+<meta property="og:image" content="http://yoursite.com/images/battery-historian/battery-historian-web2.png">
+<meta property="og:image" content="http://yoursite.com/images/battery-historian/battery-historian-web3.png">
+<meta property="og:updated_time" content="2018-11-27T10:55:02.812Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="电量监控----battery-historian">
+<meta name="twitter:description" content="battery-historian是谷歌推荐使用的电量检测工具，我们看下应该如何使用">
+<meta name="twitter:image" content="http://yoursite.com/images/battery-historian/battery-historian-local.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/05/24/Android/battery-historian/"/>
+
+
+
+
+
+  <title>电量监控----battery-historian | Ronrwin</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?edbf159d8024df632c036adb8b42f0a9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ronrwin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/24/Android/battery-historian/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="曾繁荣">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ronrwin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">电量监控----battery-historian</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-24T23:15:50+08:00">
+                2016-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/05/24/Android/battery-historian/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/05/24/Android/battery-historian/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/05/24/Android/battery-historian/" class="leancloud_visitors" data-flag-title="电量监控----battery-historian">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  battery-historian是谷歌推荐使用的电量检测工具，我们看下应该如何使用
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在Android项目中，较难监控应用的电量消耗，但是用户却非常关心手机的待机时间。 过度耗电的应用， 会遭到用户无情的卸载，不要存在侥幸心理。</p>
+<p>battery-historian是一款由Google提供的Android系统电量分析工具。该工具支持Android 5.0 Lollipop（API 21）以上。也可以参照官方的文档：<a href="http://developer.android.com/intl/zh-cn/tools/performance/batterystats-battery-historian/index.html" target="_blank" rel="noopener">http://developer.android.com/intl/zh-cn/tools/performance/batterystats-battery-historian/index.html</a></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1、GO语言及安装<br>​    - 下载地址：<a href="http://golang.org/doc/install" target="_blank" rel="noopener">http://golang.org/doc/install</a> 。<br>​    - 建立工作路径，参考<a href="http://golang.org/doc/code.html#Organization" target="_blank" rel="noopener">http://golang.org/doc/code.html#Organization</a>.<br>​    - 设置环境变量。（GO安装执行完后自动设置了环境变量。如果没有的话，需要自己手动设置）<br>2、安装Git，链接<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a> 。<br>3、安装Python 2.7（不是Python 3.x），链接<a href="https://python.org/downloads" target="_blank" rel="noopener">https://python.org/downloads</a> 。<br>4、安装Java，<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>.<br>5、下载Battery Historian :<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">go</span> get -d -u github.com/google/battery-historian/</span><br></pre></td></tr></table></figure></p>
+<p>6、安装并运行Battery Historian<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cd $GOPATH/src/github.com/google/battery-historian</span><br><span class="line"> </span><br><span class="line"># Compile Javascript files using the Closure compiler</span><br><span class="line">$ <span class="keyword">go</span> run setup.<span class="keyword">go</span></span><br><span class="line"> </span><br><span class="line"># Run Historian on your machine (<span class="built_in">make</span> sure $PATH contains $GOBIN)</span><br><span class="line">$ <span class="keyword">go</span> run cmd/battery-historian/battery-historian.<span class="keyword">go</span> [--port &lt;<span class="keyword">default</span>:<span class="number">9999</span>&gt;]</span><br></pre></td></tr></table></figure></p>
+<p>执行之后，访问<a href="http://localhost:9999/就可以开始分析过程了。" target="_blank" rel="noopener">http://localhost:9999/就可以开始分析过程了。</a></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h4 id="重置数据"><a href="#重置数据" class="headerlink" title="重置数据"></a>重置数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys batterystats --enable full-wake-history</span><br><span class="line">shell dumpsys batterystats --reset</span><br></pre></td></tr></table></figure>
+<h4 id="输出bugreport文件"><a href="#输出bugreport文件" class="headerlink" title="输出bugreport文件"></a>输出bugreport文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb bugreport &gt; bugreport.txt</span><br></pre></td></tr></table></figure>
+<h4 id="生成分析文件"><a href="#生成分析文件" class="headerlink" title="生成分析文件"></a>生成分析文件</h4><p>我们有两种方式来获取分析结果文件<br>1、使用battery historian包里的python脚本来生成html文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; adb shell dumpsys batterystats &gt; batterystats.txt</span><br><span class="line">&gt; python scripts/historian.py batterystats.txt &gt; batterystats.html</span><br></pre></td></tr></table></figure></p>
+<p>打开batterystats.html，我们可以看到如下的分析界面了：<br><img src="/images/battery-historian/battery-historian-local.png" alt="监控" title="battery-historian.html"></p>
+<p>2、上传bugreport文件分析<br>我们进入到battery-historian目录，执行启动指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH/src/github.com/google/battery-historian</span><br><span class="line">go run cmd/battery-historian/battery-historian.go [--port &lt;default:9999&gt;]</span><br></pre></td></tr></table></figure>
+<p>访问<a href="http://localhost:9999，上传bugreport.txt文件，之后就可以得到下面的分析界面：" target="_blank" rel="noopener">http://localhost:9999，上传bugreport.txt文件，之后就可以得到下面的分析界面：</a><br><img src="/images/battery-historian/battery-historian-web1.png" alt="联网分析1"><br><img src="/images/battery-historian/battery-historian-web2.png" alt="联网分析2"><br>切换到App Stats，可以分析具体的app情况<br><img src="/images/battery-historian/battery-historian-web3.png" alt="联网分析3"></p>
+<h2 id="指标说明"><a href="#指标说明" class="headerlink" title="指标说明"></a>指标说明</h2><h4 id="横坐标"><a href="#横坐标" class="headerlink" title="横坐标"></a>横坐标</h4><p>横坐标是表示时间段的分割，方便我们观察某个时间段或时间跨度的的数据。</p>
+<h4 id="纵坐标"><a href="#纵坐标" class="headerlink" title="纵坐标"></a>纵坐标</h4><p>battery_level：当前电量值。<br>plugged：是否充电状态。<br>screen：屏幕是否点亮，这一点可以考虑到睡眠状态和点亮状态下电量的使用信息。<br>top：该栏显示当前时刻哪个app处于最上层，就是当前手机运行的app，用来判断某个app对手机电量的影响，这样也能判断出该app的耗电量信息。该栏记录了应用在某一个时刻启动，以及运行的时间，这对我们比对不同应用对性能的影响有很大的帮助。<br>wake_lock：记录wake_lock模块的工作时间。是否有停止的时候等。<br>sync：发生同步操作的对象。<br>running：界面的状态，主要判断是否处于idle的状态。用来判断无操作状态下电量的消耗。<br>wake_reason：唤醒的原因。<br>wake_lock_in：wake_lock有不同的组件，这个地方记录在某一个时刻，有哪些部件开始工作，以及工作的时间。<br>conn：数据连接方式。是无连接，还是wifi、2g/3g/4g。<br>status：电池状态信息，有充电，放电，未充电，已充满，未知等不同状态。 这一栏记录了电池状态的改变信息。<br>phone_signal_strength：手机信号强度变化<br>wifi_signal_strength：wifi信号强度。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个工具是谷歌官方使用的电量监测工具。数据来源是从手机的bugreport中获取，并绘制成图表以方便我们作分析。由于电量的记录是以电池状态为主，所以我们不能从该分析中准确知道哪个应用使用了多少电量。我们可以从电量的使用效率趋势上面获取到大概的信息，并从具体的app分析结果中得出大概的电量使用趋势。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/性能/" rel="tag"># 性能</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/17/Android/bugreport-analysis/" rel="next" title="bugreport分析工具----ChkBugReport简介">
+                <i class="fa fa-chevron-left"></i> bugreport分析工具----ChkBugReport简介
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/25/essay/time-management/" rel="prev" title="（转）时间管理的七句话">
+                （转）时间管理的七句话 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="曾繁荣" />
+            
+              <p class="site-author-name" itemprop="name">曾繁荣</p>
+              <p class="site-description motion-element" itemprop="description">我要一步一步往上爬</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#重置数据"><span class="nav-number">2.0.1.</span> <span class="nav-text">重置数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出bugreport文件"><span class="nav-number">2.0.2.</span> <span class="nav-text">输出bugreport文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成分析文件"><span class="nav-number">2.0.3.</span> <span class="nav-text">生成分析文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指标说明"><span class="nav-number">3.</span> <span class="nav-text">指标说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#横坐标"><span class="nav-number">3.0.1.</span> <span class="nav-text">横坐标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#纵坐标"><span class="nav-number">3.0.2.</span> <span class="nav-text">纵坐标</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">曾繁荣</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2016/05/24/Android/battery-historian/';
+          this.page.identifier = '2016/05/24/Android/battery-historian/';
+          this.page.title = '电量监控----battery-historian';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("rJY7oU2yC0X7rpMkDVpgbLMk-gzGzoHsz", "5D09GTCHztyL5uOTrN73c9Dt");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
