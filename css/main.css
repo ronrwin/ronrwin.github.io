@@ -1376,7 +1376,7 @@ pre .javascript .function {
 .posts-collapse::after {
   content: " ";
   position: absolute;
-  top: 20px;
+  top: 10px;
   left: 0;
   margin-left: -2px;
   width: 4px;
@@ -1391,11 +1391,14 @@ pre .javascript .function {
 }
 .posts-collapse .collection-title {
   position: relative;
-  margin: 20px 0;
+  margin: 0px 0;
+  border-bottom: 0px dashed #ccc;
 }
 .posts-collapse .collection-title h1,
 .posts-collapse .collection-title h2 {
+  margin-top: 20px;
   margin-left: 20px;
+  margin-bottom: 15px;
 }
 .posts-collapse .collection-title small {
   color: #bbb;
@@ -1414,8 +1417,10 @@ pre .javascript .function {
   border-radius: 50%;
 }
 .posts-collapse .post {
-  margin: 0px 0;
+  margin: 10px 0;
   padding: 0px;
+  -webkit-box-shadow: 0 0 rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 rgba(202,203,204,0.5);
 }
 .posts-collapse .post-header {
   position: relative;
@@ -1423,7 +1428,7 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
   transition-property: border;
-  border-bottom: 0px dashed #ccc;
+  border-bottom: 0.5px dashed #ccc;
 }
 .posts-collapse .post-header::before {
   content: " ";
@@ -1443,6 +1448,7 @@ pre .javascript .function {
 }
 .posts-collapse .post-header:hover {
   border-bottom-color: #666;
+  color: #222;
 }
 .posts-collapse .post-header:hover::before {
   background: #222;
@@ -1450,14 +1456,16 @@ pre .javascript .function {
 .posts-collapse .post-meta {
   position: absolute;
   font-size: 12px;
-  left: 10px;
+  left: 25px;
   top: 5px;
 }
 .posts-collapse .post-comments-count {
   display: none;
 }
 .posts-collapse .post-title {
-  margin-left: 50px;
+  margin-top: 5px;
+  margin-left: 65px;
+  margin-bottom: 5px;
   font-size: 16px;
   font-weight: normal;
   line-height: inherit;
@@ -1771,6 +1779,9 @@ pre .javascript .function {
   border: 2px solid #333;
   opacity: 1;
 }
+.site-author-image {
+  border-radius: 100%;
+}
 .site-author-name {
   margin: 5px 0 0;
   text-align: center;
@@ -1853,7 +1864,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cd771b;
+  background: #f490ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2862,11 +2873,16 @@ hr {
 .hider_title {
   font-family: "Microsoft Yahei";
   cursor: pointer;
-  color: #f00;
+  color: #808080;
 }
-.close:after {
+.close:before {
   content: "▼";
 }
-.open:after {
+.open:before {
   content: "▲";
+}
+@media screen and (min-width: 1200px) {
+  #footer a {
+    color: #eee;
+  }
 }

@@ -1,146 +1,55 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
-
-
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ronrwin.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="battery-historian是谷歌推荐使用的电量检测工具，我们看下应该如何使用">
-<meta name="keywords" content="性能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="电量监控----battery-historian">
-<meta property="og:url" content="http://yoursite.com/2016/05/24/Android/battery-historian/index.html">
+<meta property="og:url" content="http://ronrwin.github.io/2016/05/24/Android/battery-historian/index.html">
 <meta property="og:site_name" content="Ronrwin">
 <meta property="og:description" content="battery-historian是谷歌推荐使用的电量检测工具，我们看下应该如何使用">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/battery-historian/battery-historian-local.png">
-<meta property="og:image" content="http://yoursite.com/images/battery-historian/battery-historian-web1.png">
-<meta property="og:image" content="http://yoursite.com/images/battery-historian/battery-historian-web2.png">
-<meta property="og:image" content="http://yoursite.com/images/battery-historian/battery-historian-web3.png">
-<meta property="og:updated_time" content="2018-11-28T10:52:28.890Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ronrwin.github.io/images/battery-historian/battery-historian-local.png">
+<meta property="og:image" content="http://ronrwin.github.io/images/battery-historian/battery-historian-web1.png">
+<meta property="og:image" content="http://ronrwin.github.io/images/battery-historian/battery-historian-web2.png">
+<meta property="og:image" content="http://ronrwin.github.io/images/battery-historian/battery-historian-web3.png">
+<meta property="article:published_time" content="2016-05-24T15:15:50.000Z">
+<meta property="article:modified_time" content="2018-11-28T10:52:28.000Z">
+<meta property="article:author" content="曾繁荣">
+<meta property="article:tag" content="性能">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="电量监控----battery-historian">
-<meta name="twitter:description" content="battery-historian是谷歌推荐使用的电量检测工具，我们看下应该如何使用">
-<meta name="twitter:image" content="http://yoursite.com/images/battery-historian/battery-historian-local.png">
+<meta name="twitter:image" content="http://ronrwin.github.io/images/battery-historian/battery-historian-local.png">
+
+<link rel="canonical" href="http://ronrwin.github.io/2016/05/24/Android/battery-historian/">
 
 
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2016/05/24/Android/battery-historian/"/>
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -152,153 +61,83 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion .logo-line-before i { left: initial; }
-    .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Ronrwin</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Ronrwin</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
 
 
+
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-      
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-      
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">10</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">7</span></a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-      
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">17</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">18</span></a>
 
   </li>
-
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
+  </ul>
 </nav>
 
-
-
-  
 
 
 
@@ -306,116 +145,63 @@
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/24/Android/battery-historian/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ronrwin.github.io/2016/05/24/Android/battery-historian/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="曾繁荣">
       <meta itemprop="description" content="每天进步一点点">
-      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Ronrwin">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">电量监控----battery-historian
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          电量监控----battery-historian
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2016-05-24 23:15:50" itemprop="dateCreated datePublished" datetime="2016-05-24T23:15:50+08:00">2016-05-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
+                <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2018-11-28 18:52:28" itemprop="dateModified" datetime="2018-11-28T18:52:28+08:00">2018-11-28</time>
-              
-            
-          </span>
+              </span>
 
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-              <div class="post-description">battery-historian是谷歌推荐使用的电量检测工具，我们看下应该如何使用</div>
-          
+            <div class="post-description">battery-historian是谷歌推荐使用的电量检测工具，我们看下应该如何使用</div>
 
         </div>
       </header>
-    
 
     
     
@@ -423,508 +209,221 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <p>在Android项目中，较难监控应用的电量消耗，但是用户却非常关心手机的待机时间。 过度耗电的应用， 会遭到用户无情的卸载，不要存在侥幸心理。</p>
-<p>battery-historian是一款由Google提供的Android系统电量分析工具。该工具支持Android 5.0 Lollipop（API 21）以上。也可以参照官方的文档：<a href="http://developer.android.com/intl/zh-cn/tools/performance/batterystats-battery-historian/index.html" target="_blank" rel="noopener">http://developer.android.com/intl/zh-cn/tools/performance/batterystats-battery-historian/index.html</a></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1、GO语言及安装<br>​    - 下载地址：<a href="http://golang.org/doc/install" target="_blank" rel="noopener">http://golang.org/doc/install</a> 。<br>​    - 建立工作路径，参考<a href="http://golang.org/doc/code.html#Organization" target="_blank" rel="noopener">http://golang.org/doc/code.html#Organization</a>.<br>​    - 设置环境变量。（GO安装执行完后自动设置了环境变量。如果没有的话，需要自己手动设置）<br>2、安装Git，链接<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a> 。<br>3、安装Python 2.7（不是Python 3.x），链接<a href="https://python.org/downloads" target="_blank" rel="noopener">https://python.org/downloads</a> 。<br>4、安装Java，<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>.<br>5、下载Battery Historian :<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">go</span> get -d -u github.com/google/battery-historian/</span><br></pre></td></tr></table></figure></p>
-<p>6、安装并运行Battery Historian<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cd $GOPATH/src/github.com/google/battery-historian</span><br><span class="line"> </span><br><span class="line"># Compile Javascript files using the Closure compiler</span><br><span class="line">$ <span class="keyword">go</span> run setup.<span class="keyword">go</span></span><br><span class="line"> </span><br><span class="line"># Run Historian on your machine (<span class="built_in">make</span> sure $PATH contains $GOBIN)</span><br><span class="line">$ <span class="keyword">go</span> run cmd/battery-historian/battery-historian.<span class="keyword">go</span> [--port &lt;<span class="keyword">default</span>:<span class="number">9999</span>&gt;]</span><br></pre></td></tr></table></figure></p>
-<p>执行之后，访问<a href="http://localhost:9999/就可以开始分析过程了。" target="_blank" rel="noopener">http://localhost:9999/就可以开始分析过程了。</a></p>
+<p>battery-historian是一款由Google提供的Android系统电量分析工具。该工具支持Android 5.0 Lollipop（API 21）以上。也可以参照官方的文档：<a target="_blank" rel="noopener" href="http://developer.android.com/intl/zh-cn/tools/performance/batterystats-battery-historian/index.html">http://developer.android.com/intl/zh-cn/tools/performance/batterystats-battery-historian/index.html</a></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1、GO语言及安装<br>​    - 下载地址：<a target="_blank" rel="noopener" href="http://golang.org/doc/install">http://golang.org/doc/install</a> 。<br>​    - 建立工作路径，参考<a target="_blank" rel="noopener" href="http://golang.org/doc/code.html#Organization">http://golang.org/doc/code.html#Organization</a>.<br>​    - 设置环境变量。（GO安装执行完后自动设置了环境变量。如果没有的话，需要自己手动设置）<br>2、安装Git，链接<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> 。<br>3、安装Python 2.7（不是Python 3.x），链接<a target="_blank" rel="noopener" href="https://python.org/downloads">https://python.org/downloads</a> 。<br>4、安装Java，<a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>.<br>5、下载Battery Historian :</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">go</span> get -d -u github.com/google/battery-historian/</span><br></pre></td></tr></table></figure>
+<p>6、安装并运行Battery Historian </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cd $GOPATH/src/github.com/google/battery-historian</span><br><span class="line"> </span><br><span class="line"># Compile Javascript files using the Closure compiler</span><br><span class="line">$ <span class="keyword">go</span> run setup.<span class="keyword">go</span></span><br><span class="line"> </span><br><span class="line"># Run Historian on your machine (<span class="built_in">make</span> sure $PATH contains $GOBIN)</span><br><span class="line">$ <span class="keyword">go</span> run cmd/battery-historian/battery-historian.<span class="keyword">go</span> [--port &lt;<span class="keyword">default</span>:<span class="number">9999</span>&gt;]</span><br></pre></td></tr></table></figure>
+<p>执行之后，访问<a target="_blank" rel="noopener" href="http://localhost:9999/%E5%B0%B1%E5%8F%AF%E4%BB%A5%E5%BC%80%E5%A7%8B%E5%88%86%E6%9E%90%E8%BF%87%E7%A8%8B%E4%BA%86%E3%80%82">http://localhost:9999/就可以开始分析过程了。</a></p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h4 id="重置数据"><a href="#重置数据" class="headerlink" title="重置数据"></a>重置数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys batterystats --enable full-wake-history</span><br><span class="line">shell dumpsys batterystats --reset</span><br></pre></td></tr></table></figure>
 <h4 id="输出bugreport文件"><a href="#输出bugreport文件" class="headerlink" title="输出bugreport文件"></a>输出bugreport文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb bugreport &gt; bugreport.txt</span><br></pre></td></tr></table></figure>
-<h4 id="生成分析文件"><a href="#生成分析文件" class="headerlink" title="生成分析文件"></a>生成分析文件</h4><p>我们有两种方式来获取分析结果文件<br>1、使用battery historian包里的python脚本来生成html文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; adb shell dumpsys batterystats &gt; batterystats.txt</span><br><span class="line">&gt; python scripts/historian.py batterystats.txt &gt; batterystats.html</span><br></pre></td></tr></table></figure></p>
+<h4 id="生成分析文件"><a href="#生成分析文件" class="headerlink" title="生成分析文件"></a>生成分析文件</h4><p>我们有两种方式来获取分析结果文件<br>1、使用battery historian包里的python脚本来生成html文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; adb shell dumpsys batterystats &gt; batterystats.txt</span><br><span class="line">&gt; python scripts&#x2F;historian.py batterystats.txt &gt; batterystats.html</span><br></pre></td></tr></table></figure>
 <p>打开batterystats.html，我们可以看到如下的分析界面了：<br><img src="/images/battery-historian/battery-historian-local.png" alt="监控" title="battery-historian.html"></p>
 <p>2、上传bugreport文件分析<br>我们进入到battery-historian目录，执行启动指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH/src/github.com/google/battery-historian</span><br><span class="line">go run cmd/battery-historian/battery-historian.go [--port &lt;default:9999&gt;]</span><br></pre></td></tr></table></figure>
-<p>访问<a href="http://localhost:9999，上传bugreport.txt文件，之后就可以得到下面的分析界面：" target="_blank" rel="noopener">http://localhost:9999，上传bugreport.txt文件，之后就可以得到下面的分析界面：</a><br><img src="/images/battery-historian/battery-historian-web1.png" alt="联网分析1"><br><img src="/images/battery-historian/battery-historian-web2.png" alt="联网分析2"><br>切换到App Stats，可以分析具体的app情况<br><img src="/images/battery-historian/battery-historian-web3.png" alt="联网分析3"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH&#x2F;src&#x2F;github.com&#x2F;google&#x2F;battery-historian</span><br><span class="line">go run cmd&#x2F;battery-historian&#x2F;battery-historian.go [--port &lt;default:9999&gt;]</span><br></pre></td></tr></table></figure>
+<p>访问<a href="http://localhost:9999，上传bugreport.txt文件，之后就可以得到下面的分析界面：">http://localhost:9999，上传bugreport.txt文件，之后就可以得到下面的分析界面：</a><br><img src="/images/battery-historian/battery-historian-web1.png" alt="联网分析1"><br><img src="/images/battery-historian/battery-historian-web2.png" alt="联网分析2"><br>切换到App Stats，可以分析具体的app情况<br><img src="/images/battery-historian/battery-historian-web3.png" alt="联网分析3"></p>
 <h2 id="指标说明"><a href="#指标说明" class="headerlink" title="指标说明"></a>指标说明</h2><h4 id="横坐标"><a href="#横坐标" class="headerlink" title="横坐标"></a>横坐标</h4><p>横坐标是表示时间段的分割，方便我们观察某个时间段或时间跨度的的数据。</p>
 <h4 id="纵坐标"><a href="#纵坐标" class="headerlink" title="纵坐标"></a>纵坐标</h4><p>battery_level：当前电量值。<br>plugged：是否充电状态。<br>screen：屏幕是否点亮，这一点可以考虑到睡眠状态和点亮状态下电量的使用信息。<br>top：该栏显示当前时刻哪个app处于最上层，就是当前手机运行的app，用来判断某个app对手机电量的影响，这样也能判断出该app的耗电量信息。该栏记录了应用在某一个时刻启动，以及运行的时间，这对我们比对不同应用对性能的影响有很大的帮助。<br>wake_lock：记录wake_lock模块的工作时间。是否有停止的时候等。<br>sync：发生同步操作的对象。<br>running：界面的状态，主要判断是否处于idle的状态。用来判断无操作状态下电量的消耗。<br>wake_reason：唤醒的原因。<br>wake_lock_in：wake_lock有不同的组件，这个地方记录在某一个时刻，有哪些部件开始工作，以及工作的时间。<br>conn：数据连接方式。是无连接，还是wifi、2g/3g/4g。<br>status：电池状态信息，有充电，放电，未充电，已充满，未知等不同状态。 这一栏记录了电池状态的改变信息。<br>phone_signal_strength：手机信号强度变化<br>wifi_signal_strength：wifi信号强度。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个工具是谷歌官方使用的电量监测工具。数据来源是从手机的bugreport中获取，并绘制成图表以方便我们作分析。由于电量的记录是以电池状态为主，所以我们不能从该分析中准确知道哪个应用使用了多少电量。我们可以从电量的使用效率趋势上面获取到大概的信息，并从具体的app分析结果中得出大概的电量使用趋势。</p>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-      
     
     
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/性能/" rel="tag"># 性能</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/05/17/Android/bugreport-analysis/" rel="next" title="bugreport分析工具----ChkBugReport简介">
-                <i class="fa fa-chevron-left"></i> bugreport分析工具----ChkBugReport简介
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%80%A7%E8%83%BD/" rel="tag"># 性能</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/25/essay/time-management/" rel="prev" title="（转）时间管理的七句话">
-                （转）时间管理的七句话 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/05/17/Android/bugreport-analysis/" rel="prev" title="bugreport分析工具----ChkBugReport简介">
+      <i class="fa fa-chevron-left"></i> bugreport分析工具----ChkBugReport简介
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/05/25/essay/time-management/" rel="next" title="（转）时间管理的七句话">
+      （转）时间管理的七句话 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="曾繁荣" />
-            
-              <p class="site-author-name" itemprop="name">曾繁荣</p>
-              <p class="site-description motion-element" itemprop="description">每天进步一点点</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">17</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">0</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#重置数据"><span class="nav-number">2.0.1.</span> <span class="nav-text">重置数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出bugreport文件"><span class="nav-number">2.0.2.</span> <span class="nav-text">输出bugreport文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成分析文件"><span class="nav-number">2.0.3.</span> <span class="nav-text">生成分析文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指标说明"><span class="nav-number">3.</span> <span class="nav-text">指标说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#横坐标"><span class="nav-number">3.0.1.</span> <span class="nav-text">横坐标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#纵坐标"><span class="nav-number">3.0.2.</span> <span class="nav-text">纵坐标</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">曾繁荣</span>
-
-  
-
-  
-</div>
-
-<!--
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.4.4</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
-
--->
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
-
-  
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-    
-      
-  
-  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
-  
-  
-
-  
-  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script src="/js/src/post-details.js?v=6.6.0"></script>
-
-
-
-  
-
-
-  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-  
-  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
-  <script>
-  
-    bookmark.scrollToMark('auto', "#更多");
-  
-  </script>
-
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E7%BD%AE%E6%95%B0%E6%8D%AE"><span class="nav-number">2.0.1.</span> <span class="nav-text">重置数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%87%BAbugreport%E6%96%87%E4%BB%B6"><span class="nav-number">2.0.2.</span> <span class="nav-text">输出bugreport文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6"><span class="nav-number">2.0.3.</span> <span class="nav-text">生成分析文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E6%A0%87%E8%AF%B4%E6%98%8E"><span class="nav-number">3.</span> <span class="nav-text">指标说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%AA%E5%9D%90%E6%A0%87"><span class="nav-number">3.0.1.</span> <span class="nav-text">横坐标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%B5%E5%9D%90%E6%A0%87"><span class="nav-number">3.0.2.</span> <span class="nav-text">纵坐标</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="曾繁荣"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">曾繁荣</p>
+  <div class="site-description" itemprop="description">每天进步一点点</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
         
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
 
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">曾繁荣</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 

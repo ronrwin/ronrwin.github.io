@@ -1,141 +1,50 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
-
-
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ronrwin.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="涉及到的点比较细，都是在工作学习中记录下来的，养成良好习惯。">
-<meta name="keywords" content="性能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android性能优化">
-<meta property="og:url" content="http://yoursite.com/2016/04/27/Android/android-optimization/index.html">
+<meta property="og:url" content="http://ronrwin.github.io/2016/04/27/Android/android-optimization/index.html">
 <meta property="og:site_name" content="Ronrwin">
 <meta property="og:description" content="涉及到的点比较细，都是在工作学习中记录下来的，养成良好习惯。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-28T10:52:20.554Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-04-27T03:14:48.000Z">
+<meta property="article:modified_time" content="2018-11-28T10:52:20.000Z">
+<meta property="article:author" content="曾繁荣">
+<meta property="article:tag" content="性能">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android性能优化">
-<meta name="twitter:description" content="涉及到的点比较细，都是在工作学习中记录下来的，养成良好习惯。">
+
+<link rel="canonical" href="http://ronrwin.github.io/2016/04/27/Android/android-optimization/">
 
 
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2016/04/27/Android/android-optimization/"/>
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -147,153 +56,83 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion .logo-line-before i { left: initial; }
-    .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Ronrwin</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Ronrwin</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
 
 
+
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-      
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-      
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">10</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">7</span></a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-      
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">17</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">18</span></a>
 
   </li>
-
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
+  </ul>
 </nav>
 
-
-
-  
 
 
 
@@ -301,124 +140,68 @@
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/27/Android/android-optimization/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ronrwin.github.io/2016/04/27/Android/android-optimization/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="曾繁荣">
       <meta itemprop="description" content="每天进步一点点">
-      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Ronrwin">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Android性能优化
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Android性能优化
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2016-04-27 11:14:48" itemprop="dateCreated datePublished" datetime="2016-04-27T11:14:48+08:00">2016-04-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
+                <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2018-11-28 18:52:20" itemprop="dateModified" datetime="2018-11-28T18:52:20+08:00">2018-11-28</time>
-              
-            
-          </span>
+              </span>
 
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-              <div class="post-description">涉及到的点比较细，都是在工作学习中记录下来的，养成良好习惯。</div>
-          
+            <div class="post-description">涉及到的点比较细，都是在工作学习中记录下来的，养成良好习惯。</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <p>关于Android性能优化的文章，网上有很多，涉及的点也很多，包括内存方面，界面方面，布局方面，代码编写方面。<br>基本遵循的规则有两个：</p>
@@ -452,7 +235,7 @@
 <li>文字颜色尽量不设置透明度。</li>
 <li>自绘的View，<code>invalidate</code>应当计算最小的重绘区域，避免重绘整个View。</li>
 <li>使用<strong>EditText</strong>时，最好指定<strong>inputType</strong>，追求更高体验。</li>
-<li>不要在<strong>onAnimationEnd()</strong>中把自己从view tree中移除，AC下这个View还会继续绘制最后一帧，移除会导致parent的dispatchDraw出现崩溃。</li>
+<li>不要在**onAnimationEnd()**中把自己从view tree中移除，AC下这个View还会继续绘制最后一帧，移除会导致parent的dispatchDraw出现崩溃。</li>
 <li>View的框架事件中不能修改布局，否则会导致显示/响应错乱甚至崩溃，如：onMessure、onLayout、onDraw、onTouchEvent、dispatchKeyEvent、onInterupteXxx等。</li>
 <li>View的框架事件中不宜创建对象，因其触发频度高，可能引起频繁GC进而影响性能。</li>
 <li>按钮尽量都设为<code>singleLine(true)</code>，以防止按钮文本过长时出现折行。</li>
@@ -471,520 +254,252 @@
 <li>有些能用文件操作的，尽量采用文件操作，文件操作的速度比数据库的操作要快10倍左右。</li>
 </ul>
 <h3 id="编码相关"><a href="#编码相关" class="headerlink" title="编码相关"></a>编码相关</h3><ul>
-<li>用<code>static final</code>声明常量。</li>
-<li>用<code>移位</code>代替乘除运算。</li>
-<li>使用<code>StringBuffer</code>或<code>StringBuilder</code>替代String的构造操作。</li>
+<li><p>用<code>static final</code>声明常量。</p>
+</li>
+<li><p>用<code>移位</code>代替乘除运算。</p>
+</li>
+<li><p>使用<code>StringBuffer</code>或<code>StringBuilder</code>替代String的构造操作。</p>
+</li>
 <li><p>StringBuilder没有同步保护，因此比StringBuffer要快；如果构建的字符串是局部变量，则没有线程安全问题，用StringBuilder效率高。</p>
 </li>
 <li><p>字符串比较使用<code>&quot;html&quot;.equals(targetString)</code>这种方法，避免空指针异常；</p>
 </li>
-<li>谨慎使用<code>synchronized</code>；调用一个synchronized方法比没有synchronized的方法要慢。</li>
-<li><strong>慎用反射</strong>。通过反射调用方法，访问成员变量要慢很多。</li>
-<li>尽量避免创建对象，使用引用。</li>
-<li>使用<code>clone()</code>方法避免构造一个新的对象。例如数组也是一个对象，可以用clone()方法拷贝数组。</li>
-<li>变量引用新对象之前先把变量置<code>null</code>；特别注意，在变量引用的旧对象占用大量内存时，及时把变量置null使得GC有机会及时把内存回收。</li>
-<li>如果不需要访问对象的属性，把方法声明为static，这样方法的调用会快15%~20%。</li>
-<li>如果不希望方法被重载，把方法声明为<code>final</code>。</li>
-<li>类的内部不要用getter/setter访问成员变量，Android下虚函数的调用代价高昂。把成员设为public，直接访问。</li>
-<li>使用增强for循环<code>foreach</code>或<code>for (obj : objs)</code>。</li>
-<li>私有内部类要访问外部类的field或方法时,其成员变量不要用private，因为在编译时会生成setter/getter,影响性能。可以把外部类的field或方法声明为包访问权限。</li>
-<li>容器使用完先用clear()或removeAllElements()清空然后再置null；数组直接置null就可以，而不用每个数组元素都置null。</li>
-<li>少使用<code>浮点数</code>。<code>浮点数</code>比<code>整形</code>慢两倍。</li>
-<li>尽量原生数据类型替代包装类。使用<code>int</code>替代<code>Interger</code>。</li>
-<li><strong>慎用异常</strong>，异常对性能不利。抛出异常首先要创建一个新的对象。Throwable接口的构造函数调用名为fillInStackTrace()的本地（Native）方法，fillInStackTrace()方法检查堆栈，收集调用跟踪信息。只要有异常被抛出，VM就必须调整调用堆栈，因为在处理过程中创建了一个新的对象。<br>异常只能用于错误处理，不应该用来控制程序流程。</li>
-<li><p>少用inner class，在主类实现相应的Listener接口，处理event；inner class和anonymous class都是另外一个类，运行时都要加载到内存。但这是以牺牲main class的重用性为代价。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle icicle)</span> </span>&#123; </span><br><span class="line">        <span class="keyword">super</span>.onCreate(icicle); </span><br><span class="line">        setContentView(R.layout.content_layout_id);  </span><br><span class="line">        <span class="keyword">final</span> Button button = (Button) findViewById(R.id.button_id); </span><br><span class="line">        button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123; </span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123; </span><br><span class="line">                 <span class="comment">// Perform action on click </span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">// 编译时会多出一个类来，如果改成如下实现，则只有一个类。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span></span></span><br><span class="line"><span class="class">    // …</span></span><br><span class="line"><span class="class">    <span class="title">button</span>.<span class="title">setOnClickListener</span>(<span class="title">this</span>)</span>;</span><br></pre></td></tr></table></figure>
+<li><p>谨慎使用<code>synchronized</code>；调用一个synchronized方法比没有synchronized的方法要慢。</p>
 </li>
+<li><p><strong>慎用反射</strong>。通过反射调用方法，访问成员变量要慢很多。</p>
+</li>
+<li><p>尽量避免创建对象，使用引用。</p>
+</li>
+<li><p>使用<code>clone()</code>方法避免构造一个新的对象。例如数组也是一个对象，可以用clone()方法拷贝数组。</p>
+</li>
+<li><p>变量引用新对象之前先把变量置<code>null</code>；特别注意，在变量引用的旧对象占用大量内存时，及时把变量置null使得GC有机会及时把内存回收。</p>
+</li>
+<li><p>如果不需要访问对象的属性，把方法声明为static，这样方法的调用会快15%~20%。</p>
+</li>
+<li><p>如果不希望方法被重载，把方法声明为<code>final</code>。</p>
+</li>
+<li><p>类的内部不要用getter/setter访问成员变量，Android下虚函数的调用代价高昂。把成员设为public，直接访问。</p>
+</li>
+<li><p>使用增强for循环<code>foreach</code>或<code>for (obj : objs)</code>。</p>
+</li>
+<li><p>私有内部类要访问外部类的field或方法时,其成员变量不要用private，因为在编译时会生成setter/getter,影响性能。可以把外部类的field或方法声明为包访问权限。</p>
+</li>
+<li><p>容器使用完先用clear()或removeAllElements()清空然后再置null；数组直接置null就可以，而不用每个数组元素都置null。</p>
+</li>
+<li><p>少使用<code>浮点数</code>。<code>浮点数</code>比<code>整形</code>慢两倍。</p>
+</li>
+<li><p>尽量原生数据类型替代包装类。使用<code>int</code>替代<code>Interger</code>。</p>
+</li>
+<li><p><strong>慎用异常</strong>，异常对性能不利。抛出异常首先要创建一个新的对象。Throwable接口的构造函数调用名为fillInStackTrace()的本地（Native）方法，fillInStackTrace()方法检查堆栈，收集调用跟踪信息。只要有异常被抛出，VM就必须调整调用堆栈，因为在处理过程中创建了一个新的对象。<br>异常只能用于错误处理，不应该用来控制程序流程。</p>
+</li>
+<li><p>少用inner class，在主类实现相应的Listener接口，处理event；inner class和anonymous class都是另外一个类，运行时都要加载到内存。但这是以牺牲main class的重用性为代价。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle icicle)</span> </span>&#123; </span><br><span class="line">        <span class="keyword">super</span>.onCreate(icicle); </span><br><span class="line">        setContentView(R.layout.content_layout_id);  </span><br><span class="line">        <span class="keyword">final</span> Button button = (Button) findViewById(R.id.button_id); </span><br><span class="line">        button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123; </span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123; </span><br><span class="line">                 <span class="comment">// Perform action on click </span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">// 编译时会多出一个类来，如果改成如下实现，则只有一个类。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span></span></span><br><span class="line"><span class="class">    // …</span></span><br><span class="line"><span class="class">    <span class="title">button</span>.<span class="title">setOnClickListener</span>(<span class="title">this</span>)</span>;</span><br></pre></td></tr></table></figure></li>
 <li><p>Vector，HashTable和Stack的访问都是同步的，因此每次访问都有同步开销；不过不需要同步访问，考虑HashMap，ArrayList。</p>
 </li>
-<li>尽量使用索引去操作容器。例如用ArrayList. remove(int index)比ArrayList. remove(Object object)要快，因为它不用去查找索引。</li>
-<li>尽量使用有快速hashcode()方法的类型做hashtable的key，推荐Number类型，例如Integer, Short等，避免使用String类型的key。</li>
-<li>创建容器(Map、List、Set等)时指定适当的capacity，以减少扩容时的性能和内存损耗。</li>
+<li><p>尽量使用索引去操作容器。例如用ArrayList. remove(int index)比ArrayList. remove(Object object)要快，因为它不用去查找索引。</p>
+</li>
+<li><p>尽量使用有快速hashcode()方法的类型做hashtable的key，推荐Number类型，例如Integer, Short等，避免使用String类型的key。</p>
+</li>
+<li><p>创建容器(Map、List、Set等)时指定适当的capacity，以减少扩容时的性能和内存损耗。</p>
+</li>
 </ul>
 
-      
     </div>
 
     
-
-    
-    
-    
-
-    
-
-    
-      
     
     
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/性能/" rel="tag"># 性能</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/04/27/Android/multi-pass-viewgroup/" rel="next" title="Multi-pass Viewgroup性能表现">
-                <i class="fa fa-chevron-left"></i> Multi-pass Viewgroup性能表现
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%80%A7%E8%83%BD/" rel="tag"># 性能</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/17/Android/bugreport-analysis/" rel="prev" title="bugreport分析工具----ChkBugReport简介">
-                bugreport分析工具----ChkBugReport简介 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/04/27/Android/multi-pass-viewgroup/" rel="prev" title="Multi-pass Viewgroup性能表现">
+      <i class="fa fa-chevron-left"></i> Multi-pass Viewgroup性能表现
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/05/17/Android/bugreport-analysis/" rel="next" title="bugreport分析工具----ChkBugReport简介">
+      bugreport分析工具----ChkBugReport简介 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-  </div>
 
 
           </div>
           
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="曾繁荣" />
-            
-              <p class="site-author-name" itemprop="name">曾繁荣</p>
-              <p class="site-description motion-element" itemprop="description">每天进步一点点</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">17</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">0</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#日志"><span class="nav-number">1.</span> <span class="nav-text">日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UI相关"><span class="nav-number">2.</span> <span class="nav-text">UI相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据-内存相关"><span class="nav-number">3.</span> <span class="nav-text">数据/内存相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码相关"><span class="nav-number">4.</span> <span class="nav-text">编码相关</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">曾繁荣</span>
-
-  
-
-  
-</div>
-
-<!--
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.4.4</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
-
--->
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
-
-  
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
+          
   
-    
-      
-  
-  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
-  
-  
-
-  
-  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script src="/js/src/post-details.js?v=6.6.0"></script>
-
-
-
-  
-
-
-  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-  
-  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
-  <script>
-  
-    bookmark.scrollToMark('auto', "#更多");
-  
-  </script>
-
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E5%BF%97"><span class="nav-number">1.</span> <span class="nav-text">日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UI%E7%9B%B8%E5%85%B3"><span class="nav-number">2.</span> <span class="nav-text">UI相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE-%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3"><span class="nav-number">3.</span> <span class="nav-text">数据&#x2F;内存相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E7%9B%B8%E5%85%B3"><span class="nav-number">4.</span> <span class="nav-text">编码相关</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="曾繁荣"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">曾繁荣</p>
+  <div class="site-description" itemprop="description">每天进步一点点</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
         
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
 
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">曾繁荣</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 
